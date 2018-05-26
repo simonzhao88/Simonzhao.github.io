@@ -30,7 +30,7 @@
 
         .cube-loading:before {
             display: block;
-            content: 'Loading';
+            content: '加载中';
             position: relative;
             width: 100%;
             top: 50%;
@@ -92,11 +92,11 @@
     <ul class="cube-menu-list">
         
         <li>
-            <a class="lrc-control">Open Lyrics</a>
+            <a class="lrc-control">开启歌词</a>
         </li>
         
         <li>
-            <a class="scroll-to-top">Top</a>
+            <a class="scroll-to-top">回到顶部</a>
         </li>
     </ul>
 </nav>
@@ -179,7 +179,10 @@
     
     <div class="cube-article-content cube-markdown">
         
-        <p>import    getpass</p>
+        <p>python第一阶段的学习记录</p>
+<p>包含了python的基础语法</p>
+<a id="more"></a>
+<p>import    getpass</p>
 <p>print(‘hello’, end=’’, flush=True)        flush冲刷缓冲区,默认是False</p>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><code>数字型(Number)</code> <code>字符型(String)</code> <code>布尔型(boolean)</code> <code>空类型(None)</code> <code>列表型(list)</code> <code>元组型(tuple)</code> <code>字典型(dict)</code> <code>集合型(set)</code></p>
 <h3 id="标准数据类型"><a href="#标准数据类型" class="headerlink" title="标准数据类型"></a>标准数据类型</h3><p>Python3 中有六个标准的数据类型：</p>
@@ -632,11 +635,12 @@
 <ul>
 <li><strong>staticmethod</strong> 是类静态方法，其跟成员方法的区别是没有 self 参数，并且可以在类不进行实例化的情况下调用</li>
 <li><strong>classmethod</strong> 与成员方法的区别在于所接收的第一个参数不是 self （类实例的指针），而是cls（当前类的具体类型）</li>
-<li><strong>property</strong> 是属性的意思，表示可以通过通过类实例直接访问的信息</li>
+<li><p><strong>property</strong> 是属性的意思，表示可以通过通过类实例直接访问的信息</p>
+<p>类方法、静方法    都是通过给类发消息来调用的             </p>
+<p>实例方法            发给对象的消息 在类创建对象后，实例方法才能被使用，使用格式为：对象名.实例方法</p>
+<p>​                名。实例方法可以使用该方法所在类的所有静态成员和实例成员。 </p>
+</li>
 </ul>
-<p>类方法、静方法        都是通过给类发消息来调用的             </p>
-<p>实例方法                发给对象的消息 在类创建对象后，实例方法才能被使用，使用格式为：对象名.实例方法</p>
-<p>​                    名。实例方法可以使用该方法所在类的所有静态成员和实例成员。 </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> abc <span class="keyword">import</span> abstractmethod, ABCMeta</span><br><span class="line"></span><br><span class="line"><span class="comment"># 面向对象的三大支柱 - 封装 / 继承 / 多态</span></span><br><span class="line"><span class="comment"># 封装 - 隐藏复杂的实现细节 暴露简单的调用接口</span></span><br><span class="line"><span class="comment"># 继承 - 从已有的类创建新类的过程 提供继承信息的称为父类(超类/基类) 得到继承信息的称为子类(派生类)</span></span><br><span class="line"><span class="comment"># 多态 - 见下面</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在创建类时通过指定metaclass=ABCMeta可以将一个类声明为抽象类</span></span><br><span class="line"><span class="comment"># 所谓抽象类就是不能创建对象的类 它存在价值是留给它的子类去继承</span></span><br><span class="line"><span class="comment"># 经验: 我们强烈建议将用来继承的类声明为抽象类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span><span class="params">(object, metaclass=ABCMeta)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self._name = name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._name[:<span class="number">-1</span>] + <span class="string">'*'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 被abstractmethod包装器修饰的方法是抽象方法</span></span><br><span class="line">    <span class="comment"># 所谓抽象方法就是没有实现专门留给子类去重写的方法</span></span><br><span class="line">    <span class="comment"># 如果子类没有重写这个抽象方法 那么子类相当于也是抽象类 不能创建对象</span></span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_salary</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Manager</span><span class="params">(Employee)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_salary</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">12000</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Programmer</span><span class="params">(Employee)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        super().__init__(name)</span><br><span class="line">        self._working_hour = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">working_hour</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._working_hour</span><br><span class="line"></span><br><span class="line"><span class="meta">    @working_hour.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">working_hour</span><span class="params">(self, working_hour)</span>:</span></span><br><span class="line">        self._working_hour = working_hour <span class="keyword">if</span> working_hour &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_salary</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">150</span> * self._working_hour</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Salesman</span><span class="params">(Employee)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        super().__init__(name)</span><br><span class="line">        self._sales = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sales</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._sales</span><br><span class="line"></span><br><span class="line"><span class="meta">    @sales.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sales</span><span class="params">(self, sales)</span>:</span></span><br><span class="line">        self._sales = sales</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_salary</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1500</span> + self._sales * <span class="number">0.05</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    emp_list = [Manager(<span class="string">'王大锤'</span>), Programmer(<span class="string">'骆昊'</span>),</span><br><span class="line">                Programmer(<span class="string">'李大嘴'</span>), Salesman(<span class="string">'白元芳'</span>)]</span><br><span class="line">    <span class="keyword">for</span> emp <span class="keyword">in</span> emp_list:</span><br><span class="line">        <span class="keyword">if</span> isinstance(emp, Programmer):  <span class="comment">#判断一个对象是否是一个已知的类型</span></span><br><span class="line">            hour = int(input(<span class="string">'请输入%s本月工作时间: '</span> % emp.name))</span><br><span class="line">            emp.working_hour = hour</span><br><span class="line">        <span class="keyword">elif</span> isinstance(emp, Salesman):</span><br><span class="line">            sales = float(input(<span class="string">'请输入%s本月销售额: '</span> % emp.name))</span><br><span class="line">            emp.sales = sales</span><br><span class="line">        <span class="comment"># 多态 - 给同样的对象发送同样的消息(同样的引用调用同样的方法)做了不同的事情</span></span><br><span class="line">        <span class="comment"># 实现多态最关键的就是子类对父类已有方法进行重写 不同的子类给出不同的实现版本</span></span><br><span class="line">        print(<span class="string">'%s月薪为￥%.2f元'</span> % (emp.name, emp.get_salary()))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 <h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="string">'try...'</span>)</span><br><span class="line">    r = <span class="number">10</span> / <span class="number">0</span></span><br><span class="line">    print(<span class="string">'result:'</span>, r)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">'except:'</span>, e)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">'finally...'</span>)</span><br><span class="line">print(<span class="string">'END'</span>)</span><br></pre></td></tr></table></figure>
 <p>try语句按照如下方式工作；</p>
@@ -759,7 +763,7 @@
 
 <div class="cube-search cube-sidebar" id="cube-search">
     <div class="search-container">
-        <input type="text" placeholder="Search" class="cube-search-input" id="cube-search-input">
+        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
         <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
     </div>
     <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
@@ -774,7 +778,7 @@
 </script>
 <div class="cube-search-form">
     <div class="cube-search-control">
-        <input type="text" placeholder="Search" class="search-input">
+        <input type="text" placeholder="搜索" class="search-input">
         <a class="close-button">
             <i class="cube-icon cube-close" aria-hidden="true"></i>
         </a>
@@ -790,9 +794,9 @@
     
     
     <div class="count">
-        <a class="count articles"><span>3</span>Article</a>
-        <a class="count tags"><span>2</span>Tags</a>
-        <a class="count categories"><span>0</span>Categories</a>
+        <a class="count articles"><span>3</span>文章</a>
+        <a class="count tags"><span>2</span>标签</a>
+        <a class="count categories"><span>0</span>分类</a>
     </div>
 </div>
 
@@ -806,8 +810,8 @@
         window.musicModule = {}
         window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
         window.musicModule.lrcConfig = {
-            open: 'Open Lyrics',
-            close: 'Close Lyrics'
+            open: '开启歌词',
+            close: '关闭歌词'
         }
     })(window)
 </script>
@@ -816,7 +820,7 @@
 
 <div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
     <div class="title">
-        <a>Recent Posts</a>
+        <a>近期文章</a>
     </div>
     <ul class="list">
         
@@ -871,7 +875,7 @@
 
 <div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
     <div class="title">
-        <a href="/tags">Tagcloud</a>
+        <a href="/tags">标签云</a>
     </div>
     <div class="cube-boxs">
         
@@ -892,7 +896,7 @@
 
 <div class="cube-links cube-sidebar" id="cube-links">
     <div class="title">
-        <a>Links</a>
+        <a>个人链接</a>
     </div>
     <ul class="list">
         
@@ -927,7 +931,7 @@
 
 <div class="cube-friend-links cube-sidebar" id="cube-friend-links">
     <div class="title">
-        <a>Friend Links</a>
+        <a>友情链接</a>
     </div>
     <ul class="list">
         
