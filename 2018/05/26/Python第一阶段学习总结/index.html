@@ -10,7 +10,7 @@
     
     
     
-    <title>Simon&#39;s Blog</title>
+    <title>Python第一阶段学习总结 | Simon&#39;s Blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -160,27 +160,26 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            
-<div class="cube-excerpt" id="cube-excerpt-Python第一阶段学习总结">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/Python第一阶段学习总结/">Python第一阶段学习总结</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/python/" class="cube-excerpt-tag-link">#python</a>
-                
-            </div>
+            <div class="cube-article">
+    <h1 class="title">Python第一阶段学习总结</h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2018-05-26
         </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/python/">#python</a>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
         
-        
-           <p>import    getpass</p>
+        <p>import    getpass</p>
 <p>print(‘hello’, end=’’, flush=True)        flush冲刷缓冲区,默认是False</p>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><code>数字型(Number)</code> <code>字符型(String)</code> <code>布尔型(boolean)</code> <code>空类型(None)</code> <code>列表型(list)</code> <code>元组型(tuple)</code> <code>字典型(dict)</code> <code>集合型(set)</code></p>
 <h3 id="标准数据类型"><a href="#标准数据类型" class="headerlink" title="标准数据类型"></a>标准数据类型</h3><p>Python3 中有六个标准的数据类型：</p>
@@ -732,102 +731,28 @@
 <h4 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建服务器发文件</span></span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> SEEK_END</span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> socket, SOCK_STREAM, AF_INET</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 1.创建套接字对象并指定使用哪种传输服务</span></span><br><span class="line">    server = socket(family=AF_INET, type=SOCK_STREAM)</span><br><span class="line">    <span class="comment"># 2.绑定IP地址和端口(区分不同的服务)</span></span><br><span class="line">    server.bind((<span class="string">'10.7.152.130'</span>, <span class="number">9090</span>))</span><br><span class="line">    <span class="comment"># 3.开启监听 - 监听客户端连接到服务器</span></span><br><span class="line">    server.listen(<span class="number">512</span>)</span><br><span class="line">    print(<span class="string">'服务器启动开始监听...'</span>)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'guido.jpg'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = f.read()</span><br><span class="line">        f.seek(<span class="number">0</span>, SEEK_END)<span class="comment">#设置文件读取指针在文件当前位置</span></span><br><span class="line">        file_len = f.tell()<span class="comment">#返回文件当前位置指针</span></span><br><span class="line">    <span class="comment"># 4.通过循环接收客户端的连接并作出相应的处理(提供服务)</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment"># accept方法是一个阻塞方法 如果没有客户端连接到服务器这个方法就会阻塞代码不会向下执行</span></span><br><span class="line">        client, addr = server.accept()</span><br><span class="line">        <span class="comment"># 5.发送数据</span></span><br><span class="line">        client.send(<span class="string">'guido.jpg'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">        client.send(str(file_len).encode(<span class="string">'utf-8'</span>))</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> total &lt; file_len:</span><br><span class="line">            client.send(data[total:total+<span class="number">1024</span>])</span><br><span class="line">            total += <span class="number">1024</span></span><br><span class="line">            sleep(<span class="number">0.001</span>)</span><br><span class="line">        <span class="comment"># 6.断开连接</span></span><br><span class="line">        client.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 <h4 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 创建一个socket</span></span><br><span class="line">    client = socket()</span><br><span class="line">    <span class="comment"># 建立连接:</span></span><br><span class="line">    client.connect((<span class="string">'10.7.152.130'</span>, <span class="number">9090</span>))</span><br><span class="line">    filename = client.recv(<span class="number">1024</span>).decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    print(filename)</span><br><span class="line">    file_len = int(client.recv(<span class="number">1024</span>).decode(<span class="string">'utf-8'</span>))</span><br><span class="line">    print(file_len)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'C:/Users/Administrator/Desktop/'</span> + filename,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> total &lt; file_len:</span><br><span class="line">            date = client.recv(<span class="number">1024</span>)</span><br><span class="line">            f.write(date)</span><br><span class="line">            total += <span class="number">1024</span></span><br><span class="line">        print(<span class="string">'图片已保存'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 <h3 id="UDP编程"><a href="#UDP编程" class="headerlink" title="UDP编程"></a>UDP编程</h3>
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/Python第一阶段学习总结/">Read More</a>
-    </footer>
+    </div>
 </div>
 
-<div class="cube-excerpt" id="cube-excerpt-Linux">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/Linux/">Linux</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/Linux/" class="cube-excerpt-tag-link">#Linux</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
+<div class="cube-article-nav">
+    <ul>
         
         
-           <p>172.16.48.23(私有)</p>
-<p>etc 软件的配置文件目录</p>
-<h3 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h3>
+        <li class="next">
+            <a href="/2018/05/26/Linux/">
+                Linux
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
         
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/Linux/">Read More</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-Hello World">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/25/hello-world/">Hello World</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-25
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/25/hello-world/">Read More</a>
-    </footer>
+    </ul>
 </div>
 
 
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
 
-<ul class="cube-pagination cube-pagination-6">
-    
-    <li class="cube-pagination-prev disabled">
-        <span>« Prev</span>
-    </li>
-    
-    
-        
-            
-            <li class="cube-pagination-index disabled">
-                <span>1</span>
-            </li>
-            
-        
-    
 
-    
-    <li class="cube-pagination-next disabled">
-        <span>Next »</span>
-    </li>
-    
-</ul>
 
-<!--其他组件后续添加-->
         </div>
         <div class="cube-right">
             
