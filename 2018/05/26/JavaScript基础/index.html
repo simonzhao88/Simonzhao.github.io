@@ -13,7 +13,7 @@
     
     
     
-    <title>Simon&#39;s Blog</title>
+    <title>JavaScript基础 | Simon&#39;s Blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -163,27 +163,26 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            
-<div class="cube-excerpt" id="cube-excerpt-JavaScript基础">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/JavaScript基础/">JavaScript基础</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/JS/" class="cube-excerpt-tag-link">#JS</a>
-                
-            </div>
+            <div class="cube-article">
+    <h1 class="title">JavaScript基础</h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2018-05-26
         </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/JS/">JS</a>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
         
-        
-           <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>​    <strong>ECMAScript</strong> - 语法规范 - ES5                (ECMA欧洲计算机制造商协会)</p>
+        <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>​    <strong>ECMAScript</strong> - 语法规范 - ES5                (ECMA欧洲计算机制造商协会)</p>
 <p>​    <strong>BOM</strong> - Browser Object Model - 浏览器对象模型 - window</p>
 <p>​    <strong>DOM</strong> - Document Object Model - 文档对象模型 - document</p>
 <p>编程范式(理念)</p>
@@ -438,301 +437,28 @@
 <li>JSONP / 服务器端设置支持跨域取数据(RESTful)</li>
 </ul>
 </script></p>
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/JavaScript基础/">阅读全文</a>
-    </footer>
+    </div>
 </div>
 
-<div class="cube-excerpt" id="cube-excerpt-CSS层叠样式表知识汇总">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/CSS层叠样式表知识汇总/">CSS层叠样式表知识汇总</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/CSS/" class="cube-excerpt-tag-link">#CSS</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
+<div class="cube-article-nav">
+    <ul>
         
         
-           <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="什么是-CSS"><a href="#什么是-CSS" class="headerlink" title="什么是 CSS?"></a>什么是 CSS?</h3><ul>
-<li>CSS 指层叠样式表 (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)</li>
-<li>样式定义<strong>如何显示</strong> HTML 元素</li>
-<li>样式通常存储在<strong>样式表</strong>中</li>
-<li>把样式添加到 HTML 4.0 中，是为了<strong>解决内容与表现分离的问题</strong></li>
-<li><strong>外部样式表</strong>可以极大提高工作效率</li>
-<li>外部样式表通常存储在 <strong>CSS 文件</strong>中</li>
-<li>多个样式定义可<strong>层叠</strong>为一</li>
-</ul>
-<p>CSS 规则由两个主要的部分构成：<strong><em>选择器</em></strong>，以及一条或多条<strong><em>声明</em></strong>，声明总是以分号(;)结束，声明组以大括号({})括起来</p>
-<ul>
-<li>就近原则</li>
-<li>具体性原则      id选择器&gt;类选择器&gt;标签选择器&gt;通配符选择器 </li>
-<li>重要性原则 ！important</li>
-</ul>
-<p><strong>盒子模型</strong> </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content（内容） - padding（内边距） - border（边框） - background-image（背景图片） - background-color（背景颜色） - margin（外边距）</span><br></pre></td></tr></table></figure>
-<h3 id="边框和轮廓"><a href="#边框和轮廓" class="headerlink" title="边框和轮廓"></a>边框和轮廓</h3><p><strong>border</strong>        设置对象边框的特性</p>
-<p><strong>border-collapse : collapse</strong>      设置表格的边框合并为一个单一的边框</p>
-<p><strong>border-color</strong>    设置或检索对象的边框颜色</p>
-<p><strong>outline</strong>        设置或检索对象外的线条轮廓。</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p><strong>font-size</strong>    设置字体大小</p>
-<p><strong>font-family</strong>    规定文本的字体系列</p>
-<p><strong>font-style</strong>    规定文本的字体尺寸</p>
-<p><strong>font-weight</strong>    规定字体的粗细</p>
-<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><p><strong>color</strong>        指定文本的颜色</p>
-<p><strong>line-height</strong>    设置行高</p>
-<p><strong>text-align</strong>    规定文本的水平对齐方式</p>
-<p><strong>text-decoration</strong>    规定添加到文本的装饰效果，：none取消下划线</p>
-<h3 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h3><p><strong>padding</strong>     简写属性在一个声明中设置所有填充属性。该属性可以有1到4个值</p>
-<p><strong>padding-bottom</strong>        设置元素的底填充<br><strong>padding-left</strong>        设置元素的左填充<br><strong>padding-right</strong>    设置元素的右填充<br><strong>padding-top</strong>        设置元素的顶部填充</p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p><u>div是不支持background-color 的，background-color是table等的属性，你要用background：#（这里是颜色代码）；这样来写</u></p>
-<p><strong>background</strong>        复合属性，设置对象的背景特性</p>
-<p><strong>background-color</strong>    设置或检索对象的背景颜色<br><strong>background-image</strong>    设置或检索对象的背景图像</p>
-<h3 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h3><p><strong>margin</strong>        在一个声明中设置所有外边距属性，该属性可以有1到4个值</p>
-<h3 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h3><p><strong>display：none</strong>    此元素不会被显示。</p>
-<p><strong>display：block</strong>    此元素将显示为块级元素，此元素前后会带有换行符。</p>
-<p><strong>display：inline</strong>    默认。此元素会被显示为内联元素，元素前后没有换行符。</p>
-<p><strong>hidden</strong>    元素是不可见的。</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p><strong>list-style</strong>    在一个声明中设置所有的列表属性<br><strong>list-style-position</strong>    设置列表项标记的放置位置</p>
-<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p><strong>position:static;</strong>     正常文档流</p>
-<p><strong>position:relative;</strong>     相对定位 相对于元素原来的位置定位没有脱离文档流,对兄弟元素没有影响</p>
-<p><strong>position:absolute;</strong>     绝对定位(相对于父元素来设置位置 脱离了文档流</p>
-<p><strong>position:fixd；</strong>  固定定位（相对于浏览器窗口摆放）</p>
-<p><strong>z-index</strong>    属性指定一个元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。</p>
-<p><strong>float：left</strong>    元素向左浮动。</p>
-<p><strong>float：right</strong>       元素向右浮动。</p>
-<p>黑科技</p>
-<p><strong>overflow: auto;</strong>    如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。</p>
-<p><strong>overflow: hidden</strong>  </p>
-<p>兄弟选择器   ~</p>
-<p>相邻兄弟选择器 +</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">安装字体</span><br><span class="line">@font-face &#123;</span><br><span class="line">	font-family: '给字体起个名 ';</span><br><span class="line">	src: url(路径);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-
+        <li class="next">
+            <a href="/2018/05/26/CSS层叠样式表知识汇总/">
+                CSS层叠样式表知识汇总
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
         
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/CSS层叠样式表知识汇总/">阅读全文</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-Html知识汇总">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/Html知识汇总/">Html知识汇总</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/前端html/" class="cube-excerpt-tag-link">#前端html</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="什么是HTML"><a href="#什么是HTML" class="headerlink" title="什么是HTML?"></a>什么是HTML?</h3><p>HTML 是用来描述网页的一种语言。</p>
-<ol>
-<li>Tag: Content 装内容装数据</li>
-<li>CSS: Display 渲染,显示 </li>
-<li>JavaScript: Behavior 交互,行为</li>
-</ol>
-<ul>
-<li>HTML 指的是超文本标记语言: <strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</li>
-<li>HTML 不是一种编程语言，而是一种<strong>标记</strong>语言</li>
-<li>标记语言是一套<strong>标记标签</strong> (markup tag)</li>
-<li>HTML 使用标记标签来<strong>描述</strong>网页</li>
-<li>HTML 文档包含了HTML <strong>标签</strong>及<strong>文本</strong> 内容</li>
-<li>HTML文档也叫做<strong>web 页面</strong></li>
-</ul>
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/Html知识汇总/">阅读全文</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-CentOS7.2下安装MySQL5.7">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/CentOS7-2下安装MySQL5-7/">CentOS7.2下安装MySQL5.7</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/Linux/" class="cube-excerpt-tag-link">#Linux</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <h2 id="CentOS7-2-安装mysql5-7初始密码问题总结"><a href="#CentOS7-2-安装mysql5-7初始密码问题总结" class="headerlink" title="CentOS7.2 安装mysql5.7初始密码问题总结"></a>CentOS7.2 安装mysql5.7初始密码问题总结</h2><p>CentOS 7之后的版本yum的默认源中使用MariaDB替代原先MySQL。这对于想要使用MySQL的朋友来说，安装MySQL就比较麻烦了，笔者看了网上很多的教程，感觉不是很友好，幸运的是经过几天的摸索，笔者终于成功的装上了MySQL，现将安装的经验总结如下。</p>
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/CentOS7-2下安装MySQL5-7/">阅读全文</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-Git版本控制软件的操作">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/git版本控制软件的操作/">Git版本控制软件的操作</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/git版本控制/" class="cube-excerpt-tag-link">#git版本控制</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <h1 id="Git-—-版本控制"><a href="#Git-—-版本控制" class="headerlink" title="Git — 版本控制"></a>Git — 版本控制</h1><ol>
-<li>分布式版本控制系统 - 社会化编程<br>Git<br>BitMove - BitKeeper</li>
-<li>集中式版本控制系统 - 版本控制服务器<br>锁定模式<br>   CVS - Concurrent Version System<br>   VSS - Visual Source Safe<br>   ClearCase - IBM - Rational<br>合并模式<br>   Sunversion - SVN</li>
-</ol>
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/git版本控制软件的操作/">阅读全文</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-Linux系统的基础操作命令">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/Linux系统的基础操作命令/">Linux系统的基础操作命令</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/Linux/" class="cube-excerpt-tag-link">#Linux</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <h2 id="Linux系统历史"><a href="#Linux系统历史" class="headerlink" title="Linux系统历史"></a>Linux系统历史</h2><h2 id="Linux系统历史-1"><a href="#Linux系统历史-1" class="headerlink" title="Linux系统历史"></a>Linux系统历史</h2><p>unix  –  minix  – linux  （linux是通用操作系统 ）<br>第一台计算机  –  由Pascal 发明的<br>第一台数字计算机  – 差分机  – 程序控制硬件工作 - Ada（女的）世界上第一个程序员<br>第一台电子数字计算机  –ENIAC  冯诺依曼计算机</p>
-<p>linux  - 是系统内核<br>发行版本：RedHat Linux、Ubuntu、CentOS</p>
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/Linux系统的基础操作命令/">阅读全文</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-Python的基本语法整理">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/Python的基本语法整理/">Python的基本语法整理</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/Python/" class="cube-excerpt-tag-link">#Python</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <h1 id="Python的基础语法知识整理集合"><a href="#Python的基础语法知识整理集合" class="headerlink" title="Python的基础语法知识整理集合"></a>Python的基础语法知识整理集合</h1><p>收集整理了Python的基础语法，包括数据类型的详细解释和Python自带的各类模块</p>
-<h2 id="1-进制之间的转换"><a href="#1-进制之间的转换" class="headerlink" title="1. 进制之间的转换"></a>1. 进制之间的转换</h2><p>二进制 -&gt; 十进制<br>八进制 -&gt; 二级制<br>十进制 -&gt; 二进制</p>
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/Python的基本语法整理/">阅读全文</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-Pycharm的快捷键集合">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2018/05/26/pycharm的快捷键集合/">Pycharm的快捷键集合</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2018-05-26
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/pycharm的使用/" class="cube-excerpt-tag-link">#pycharm的使用</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <h1 id="Windows下Python-IDE-PyCharm的基本快捷键和配置简介"><a href="#Windows下Python-IDE-PyCharm的基本快捷键和配置简介" class="headerlink" title="Windows下Python IDE PyCharm的基本快捷键和配置简介"></a>Windows下Python IDE PyCharm的基本快捷键和配置简介</h1><p>关于在windows下PyCharm的一些基本快捷键方式的整理集合</p>
-<p>包括编辑、查找、运行、调试。。。</p>
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2018/05/26/pycharm的快捷键集合/">阅读全文</a>
-    </footer>
+    </ul>
 </div>
 
 
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
 
-<ul class="cube-pagination cube-pagination-6">
-    
-    <li class="cube-pagination-prev disabled">
-        <span>« 上一页</span>
-    </li>
-    
-    
-        
-            
-            <li class="cube-pagination-index disabled">
-                <span>1</span>
-            </li>
-            
-        
-    
 
-    
-    <li class="cube-pagination-next disabled">
-        <span>下一页 »</span>
-    </li>
-    
-</ul>
 
-<!--其他组件后续添加-->
         </div>
         <div class="cube-right">
             
@@ -897,12 +623,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/JavaScript/">#JavaScript</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/Python/">#Python</a>
         </div>
         
@@ -918,12 +644,12 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/CSS/">#CSS</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Linux/">#Linux</a>
         </div>
         
@@ -943,7 +669,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/git版本控制/">#git版本控制</a>
         </div>
         
