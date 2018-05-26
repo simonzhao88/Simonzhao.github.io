@@ -1,555 +1,497 @@
-
 <!DOCTYPE html>
-<html lang="zh-CN">
-    
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Simon&#39;s Blog">
-    <title>Tag: JS - Simon&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Simon">
     
-    
-    
-    <script type="application/ld+json">{}</script>
+    <link rel="shortcut icon" href="%= config.favicon">
     <meta name="description" content="愿尝尽世间苦，看遍人百态">
-<meta property="og:type" content="blog">
-<meta property="og:title" content="Simon&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/JS/index.html">
-<meta property="og:site_name" content="Simon&#39;s Blog">
-<meta property="og:description" content="愿尝尽世间苦，看遍人百态">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Simon&#39;s Blog">
-<meta name="twitter:description" content="愿尝尽世间苦，看遍人百态">
-    
-    
-        
     
     
     
     
     
-    <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
-    <link rel="stylesheet" href="/assets/css/thumbs.css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
-    <!--STYLES END-->
     
+    <title>标签: JS | Simon&#39;s Blog</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
 
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: '加载中';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
     
 </head>
-
-    <body>
-        <div id="blog">
-            <!-- Define author's picture -->
-
-
+<body>
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
+        
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        
+        <li>
+            <a class="lrc-control">开启歌词</a>
+        </li>
+        
+        <li>
+            <a class="scroll-to-top">回到顶部</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" background.jpg " alt="头部背景图片">
     
-
-<header id="header" data-behavior="1">
-    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <div class="header-title">
-        <a class="header-title-link" href="/ ">Simon&#39;s Blog</a>
+    <div class="cube-type">
+        <span class="cube-typed-title">Simon&#39;s Blog</span>
+        <span class="cube-typed-cursor">|</span>
     </div>
-    
-        
-            <a  class="header-right-picture "
-                href="#about">
-        
-        
-        </a>
     
 </header>
 
-            <!-- Define author's picture -->
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
+        
+            filter: blur(7px);
+            -webkit-filter: blur(7px);
+        
+            z-index: -1;
+            background-image: url('/images/background.png');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
 
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('/images/background.png');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">Simon&#39;s Blog</span>
+            <span class="cube-typed-cursor">|</span>
+        </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
 
-<nav id="sidebar" data-behavior="1">
-    <div class="sidebar-container">
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1100'
+            }
+
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            <style>
+    @media(max-width: 768px) {
+        body {
+            background-color: #fff!important;
+        }
+    }
+</style>
+<div class="cube-archives">
+    
+    <div class="cube-archive" style="margin-top: 0;">
+        <h1 class="title">JS</h1>
         
-        
-            <ul class="sidebar-buttons">
+        <ul class="posts">
             
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/ "
-                            
-                            title="خانه"
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-home" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">خانه</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/all-categories"
-                            
-                            title="دسته‌بندی‌ها"
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-bookmark" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">دسته‌بندی‌ها</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/all-tags"
-                            
-                            title="برچسب‌ها"
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-tags" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">برچسب‌ها</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/all-archives"
-                            
-                            title="آرشیو مطالب"
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-archive" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">آرشیو مطالب</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link open-algolia-search"
-                             href="#search"
-                            
-                            title="جست‌و‌جو"
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-search" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">جست‌و‌جو</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="#about"
-                            
-                            title="درباره"
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-question" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">درباره</span>
-                    </a>
-            </li>
-            
-        </ul>
-        
-            <ul class="sidebar-buttons">
-            
-        </ul>
-        
-            <ul class="sidebar-buttons">
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/atom.xml"
-                            
-                            title="RSS"
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-rss" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">RSS</span>
-                    </a>
+            <li class="post">
+                <a href="/2018/05/26/JavaScript基础/">JavaScript基础</a>
             </li>
             
         </ul>
         
     </div>
-</nav>
-
-            
-            <div id="main" data-behavior="1"
-                 class="
-                        hasCoverMetaIn
-                        ">
-                
-    <section class="postShorten-group main-content-wrap">
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/05/26/JavaScript基础/">
-                            JavaScript基础
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-26T16:19:00+08:00">
-	
-		    星期六، 26 5月 2018
-    	
-    </time>
-    
-        <span>در </span>
-        
-    <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
-
-
     
 </div>
+        </div>
+        <div class="cube-right">
+            
 
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="搜索" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <span>Simon</span>
+    
+    
+    <a title="愿尝尽世间苦，看遍人百态">愿尝尽世间苦，看遍人百态</a>
+    
+    <div class="count">
+        <a class="count articles"><span>8</span>文章</a>
+        <a class="count tags"><span>7</span>标签</a>
+        <a class="count categories"><span>5</span>分类</a>
+    </div>
+</div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":true,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: '开启歌词',
+            close: '关闭歌词'
+        }
+    })(window)
+</script>
+
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>近期文章</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/JavaScript基础/" title="JavaScript基础">JavaScript基础</a>
+                </p>
             </div>
             
-                <div class="postShorten-content">
-                    <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>​    <strong>ECMAScript</strong> - 语法规范 - ES5                (ECMA欧洲计算机制造商协会)</p>
-<p>​    <strong>BOM</strong> - Browser Object Model - 浏览器对象模型 - window</p>
-<p>​    <strong>DOM</strong> - Document Object Model - 文档对象模型 - document</p>
-<p>编程范式(理念)</p>
-<ul>
-<li>面向对象编程</li>
-<li>函数式编程</li>
-</ul>
-<p>层叠样式表前置, JS后置</p>
-<p>外部脚本不能包含 \<script> 标签。</p>
-<p> <strong>document.getElementById(“some id”)</strong> 。这个方法是 HTML DOM 中定义的, 是用于访问 HTML 元素的正式 W3C 标准<br>x.innerHTML=”Hello JavaScript”;    //改变内容</p>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p><strong>JavaScript 显示数据</strong></p>
-<p>JavaScript 可以通过不同的方式来输出数据：</p>
-<ul>
-<li>使用 <strong>window.alert()</strong> 弹出警告框。   alert() 方法用于显示带有一条指定消息和一个 <strong>确认</strong> 按钮的警告框。</li>
-<li>使用 <strong>document.write()</strong> 方法将内容写到 HTML 文档中。</li>
-<li>使用 <strong>innerHTML</strong> 写入到 HTML 元素。</li>
-<li>使用 <strong>console.log()</strong> 写入到浏览器的控制台。</li>
-</ul>
-<p><strong>操作 HTML 元素</strong></p>
-<p>如需从 JavaScript 访问某个 HTML 元素，您可以使用 document.getElementById(<em>id</em>) 方法。</p>
-<p>请使用 “id” 属性来标识 HTML 元素，并 innerHTML 来获取或插入元素内容：</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>JavaScript 使用关键字 <strong>var</strong> 来定义变量， 使用等号来为变量赋值</p>
-<p>JavaScript 对大小写是敏感的</p>
-<p>分号用于分隔 JavaScript 语句。通常我们在每条可执行的语句结尾添加分号。使用分号的另一用处是在一行中编写多条语句。</p>
-<p>在<u>文本字符串中</u>使用反斜杠对代码行进行换行</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>单行注释以 // 开头</p>
-<p>多行注释以 /<em> 开始，以 </em>/ 结尾</p>
-<h3 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h3><p><u>简单数据类型</u>:<code>字符串（String）</code> 、<code>数字(Number)</code> 、<code>布尔(Boolean)</code> 、<code>数组(Array)</code> 、</p>
-<p><code>空（Null）</code> 、<code>未定义（Undefined）</code> </p>
-<p><u>复杂数据类型</u>: <code>对象(Object)</code> </p>
-<p>当声明新变量时，可以使用关键词 “new” 来声明其类型：</p>
-<p>JavaScript中有隐式的类型转换</p>
-<p><code>==</code>比较，它会自动转换数据类型再比较</p>
-<p><code>===</code>比较，它不会自动转换数据类型，如果数据类型不一致，返回<code>false</code>，如果一致，再比较。</p>
-<p> <code>===(全等于/严格等)</code>    <code>!==(严格不等)</code></p>
-<p>逻辑运算符: </p>
-<p>&amp;&amp;(短路与)            只有所有都为true，&amp;&amp;运算结果才是true，第一个为false后面的不再判断</p>
-<p>||(短路或)            只要其中有一个为true，||运算结果就是true，第一个为true后面的不再判断</p>
-<p>! (非)</p>
-<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><h4 id="局部作用域"><a href="#局部作用域" class="headerlink" title="局部作用域"></a>局部作用域</h4><p>变量在函数内声明，变量为局部作用域。</p>
-<p>局部变量：只能在函数内部访问。</p>
-<h4 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h4><p>变量在函数外定义，即为全局变量。</p>
-<p>全局变量有 <strong>全局作用域</strong> : 网页中所有脚本和函数均可使用。 </p>
-<p><u>如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。</u></p>
-<h4 id="JavaScript-变量生命周期"><a href="#JavaScript-变量生命周期" class="headerlink" title="JavaScript 变量生命周期"></a>JavaScript 变量生命周期</h4><p>JavaScript 变量生命周期在它声明时初始化。</p>
-<p>局部变量在函数执行完毕后销毁。</p>
-<p>全局变量在页面关闭后销毁。</p>
-<h3 id="JavaScript全局函数"><a href="#JavaScript全局函数" class="headerlink" title="JavaScript全局函数"></a>JavaScript全局函数</h3><p>isNaN() - 是不是不是一个数</p>
-<p>parseInt() - 取整数如果取不出返回NaN</p>
-<p>parseFloat() - 取小数如果取不出返回NaN</p>
-<p>isFinite() - 是不是有限数值</p>
-<p>eval() - 非常强大的函数 evaluate - XSS(跨站脚本攻击)</p>
-<p>encodeURIComponent() - 处理成百分号编码</p>
-<p>decodeURIComponent() - 将百分号编码解码还原</p>
-<h3 id="Date-对象"><a href="#Date-对象" class="headerlink" title="Date 对象"></a>Date 对象</h3><p>创建 Date 对象： new Date() </p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>getFullYear()</td>
-<td>从 Date 对象以四位数字返回年份</td>
-</tr>
-<tr>
-<td>getMonth()</td>
-<td>从 Date 对象返回月份 (0 ~ 11)</td>
-</tr>
-<tr>
-<td>getDate()</td>
-<td>从 Date 对象返回一个月中的某一天 (1 ~ 31)</td>
-</tr>
-<tr>
-<td>getDay()</td>
-<td>从 Date 对象返回一周中的某一天 (0 ~ 6)</td>
-</tr>
-<tr>
-<td>getHours()</td>
-<td>返回 Date 对象的小时 (0 ~ 23)</td>
-</tr>
-<tr>
-<td>getMinutes()</td>
-<td>返回 Date 对象的分钟 (0 ~ 59)</td>
-</tr>
-<tr>
-<td>getSeconds()</td>
-<td>返回 Date 对象的秒数 (0 ~ 59)</td>
-</tr>
-</tbody>
-</table>
-<p>trim() 函数用于去除字符串两端的空白字符</p>
-<p><strong>parseInt()</strong>   将字符串转换成整数,提取数字</p>
-<p>disabled</p>
-<p>.onclick</p>
-<p>绑定与反绑定</p>
-<p>递归定义 - - 定义的左边和定义的右边出现了相同的概念</p>
-<p>递归调用 - - 函数直接或间接的调用了自身</p>
-<ol>
-<li>收敛条件 - 什么时候就不用递归了 </li>
-<li>递归公式</li>
-</ol>
-<p>全排列</p>
-<p>迷宫寻路</p>
-<p>==卡特兰数==</p>
-<h3 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h3><p><strong>alert()</strong>          浏览器弹出带有一段消息和一个确认按钮的警告框</p>
-<p><strong>prompt()</strong>    显示可提示用户输入的对话框</p>
-<p>confirm()    显示带有一段消息以及确认按钮和取消按钮的对话框</p>
-<p>open()          打开一个新的浏览器窗口或查找一个已命名的窗口</p>
-<p>close()        关闭浏览器窗口</p>
-<p><strong>setTimeout()</strong>  在指定的毫秒数后调用函数或计算表达式</p>
-<p><strong>setInterval()</strong>    按照指定的周期（以毫秒计）来调用函数或计算表达式</p>
-<p>clearTimeout()     取消由 setTimeout() 方法设置的 timeout</p>
-<p> clearInterval()    取消由 setInterval() 设置的 timeout</p>
-<p>moveTo()      把窗口的左上角移动到一个指定的坐标</p>
-<p>moveBy()    可相对窗口的当前坐标把它移动指定的像素</p>
-<p>resizeBy()    按照指定的像素调整窗口的大小</p>
-<h4 id="window对象属性"><a href="#window对象属性" class="headerlink" title="window对象属性"></a>window对象属性</h4><p><strong>location</strong> - 用于窗口或框架的 Location 对象</p>
-<p>属性:</p>
-<p>location.href        设置或返回当前显示的文档的完整 URL</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.write(location.href);</span><br></pre></td></tr></table></figure>
-<p>Location 对象方法:</p>
-<p>assign()    载入一个新的文档       // window.location.assign(<em>URL</em>)</p>
-<p>reload()    重新载入当前文档      // location.reload();</p>
-<p>replace()    用新的文档替换当前文档    // location.replace(<em>newURL</em>)</p>
-<p>history - go() / fofward / back</p>
-<p>screen  = avaiwidth / avaiHeight </p>
-<h3 id="Document-对象"><a href="#Document-对象" class="headerlink" title="Document 对象"></a>Document 对象</h3><p><strong>查找元素的方法</strong></p>
-<ul>
-<li>getElementById()    返回对拥有指定 id 的第一个对象的引用</li>
-</ul>
-<ul>
-<li>getElementsByTagName()    返回带有指定标签名的对象集合</li>
-</ul>
-<ul>
-<li>getElementsByClassName()    返回文档中所有指定类名的元素集合</li>
-</ul>
-<ul>
-<li>querySelector()    根据指定的选择器查找单个元素</li>
-</ul>
-<ul>
-<li>querySelectorAll()    根据指定的选择器查找所有元素</li>
-</ul>
-<p><strong>绑定事件与取消绑定</strong></p>
-<ul>
-<li>document.addEventListener() 方法用于向文档添加事件句柄 </li>
-<li>document.removeEventListener() 方法来移除 addEventListener() 方法添加的事件句柄 </li>
-<li>element.addEventListener() 方法为指定元素添加事件句柄 </li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(event, function)</span><br></pre></td></tr></table></figure>
-<p>​    - event    必需。描述事件名称的字符串。’click’ - 当用户点击某个对象时调用的事件句柄 </p>
-<p>​    - function      必需。描述了事件触发后执行的函数 </p>
-<p><strong>修改节点的内容和属性</strong></p>
-<ul>
-<li>textContent / innerHTML / nodeValue</li>
-</ul>
-<p><strong>访问成员运算符</strong> </p>
-<ul>
-<li>setAttribute() / getAttribute() / removeAttribute()</li>
-</ul>
-<p>创建新节点 - ()<br>追加新的子节点 - appendChild() / insertBefore()<br>删除子节点 - removeChild()</p>
-<p>如果已经获得一个节点 如何访问它的父节点、子节点、兄弟节点<br>parentNode<br>children / firstChild / lastChild<br>nextSibling / prevSibling</p>
-<h4 id="DOM事件对象"><a href="#DOM事件对象" class="headerlink" title="DOM事件对象"></a>DOM事件对象</h4><p><strong>鼠标事件</strong> </p>
-<p>onmousedown    鼠标按钮被按下</p>
-<p>target 事件属性可返回事件的目标节点（触发该事件的节点），如生成事件的元素、文档或窗口</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">event.target</span><br></pre></td></tr></table></figure>
-<p>事件捕获 - 从外向里传播事件</p>
-<p>事件冒泡 - 从里向外传播事件</p>
-<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><p> <strong>jQuery的$函数的作用:</strong></p>
-<p>1、    $(function() {}) -  \$函数中传入的参数是一个函数作用: 绑定页面加载完成之后要执行的回调函数</p>
-<p>2、    $(selector) -  \$函数中传入的参数是一个选择器</p>
-<p>​    作用: 通过选择器获得对应的元素并将其处理成jQuery对象jQuery对象本质是一个数组</p>
-<p>​    如果需要将jQuery对象还原成原生的JS对象一[index]/get(index)</p>
-<p>3、    $(elem) -  \$函数中传入的参数是原生JS对象</p>
-<p>​    作用: 将原生JS对象转换成jQuery对象(更多的属性更多的方法)</p>
-<p>4、    $(tag) - \$函数中传入的参数是一个标签</p>
-<p>​    作用:  和标签对应的元素(得到的是jQuery对身)</p>
-<p>通过jQuery对象的方法可以用更少的代码做更多的事情</p>
-<p>在写代码的时候不需要考虑浏览器兼容性问题(jQuery已经做了处理）</p>
-<p>引入多个JS库出现冲突时可以通过下面的方式让出$函数</p>
-<p>​    jQuery.noConfict() ;</p>
-<p>让出$函数以后原来用\$函数的地方全部换成jQuery</p>
-<p>查找元素</p>
-<ul>
-<li>选择器<ul>
-<li>* / element / #id / .class / selector1, selector2</li>
-<li>ancestor descendant / parent&gt;child / previous+next / previous~siblings </li>
-</ul>
-</li>
-<li>筛选器<ul>
-<li>基本筛选器：:not(selector) / :first / :last / :even / :odd / :eq(index) / :gt(index) / :lt(index) / :animated / :focus</li>
-<li>内容筛选器：:contains(‘…’) / :empty / :parent / :has(selector)</li>
-<li>可见性筛选器：:hidden / :visible</li>
-<li>子节点筛选器：:nth-child(expr) / :first-child / :last-child / :only-child</li>
-<li>属性筛选器：[attribute] / [attribute=’value’] / [attribute!=’value’] / [attribute^=’value’] / [attribute$=’value’] / [attribute|=’value’] / [attribute~=’value’]</li>
-</ul>
-</li>
-<li>表单： :input / :text / :password / :radio / :checkbox / :submit / :image / :reset / :button / :file / :selected / :enabled / :disabled / :checked</li>
-</ul>
-<p>执行操作</p>
-<ul>
-<li>内容操作<ul>
-<li>获取/修改内容：html() / text() / replaceWith() / remove()</li>
-<li>获取/设置元素：before() / after() / prepend() / append() / remove() / clone() / unwrap() / detach() / empty() / add()</li>
-<li>获取/修改属性：attr() / removeAttr() / addClass() / removeClass() / css()</li>
-<li>获取/设置表单值：val()</li>
-</ul>
-</li>
-<li>查找操作<ul>
-<li>查找方法：find() /  parent() / children() / siblings() / next() / nextAll() / prev() / prevAll()</li>
-<li>筛选器：filter() / not() / has() / is() / contains()</li>
-<li>索引编号：eq()</li>
-</ul>
-</li>
-<li>尺寸和位置<ul>
-<li>尺寸相关：height() / width() / innerHeight() / innerWidth() / outerWidth() / outerHeight()</li>
-<li>位置相关：offset() / position() / scrollLeft() / scrollTop()</li>
-</ul>
-</li>
-<li>特效和动画<ul>
-<li>基本动画：show() / hide() / toggle()</li>
-<li>消失出现：fadeIn() / fadeOut() / fadeTo() / fadeToggle()</li>
-<li>滑动效果：slideDown() / slideUp() / slideToggle()</li>
-<li>自定义：delay() / stop() / animate()</li>
-</ul>
-</li>
-<li>事件<ul>
-<li>文档加载：ready() / load()</li>
-<li>用户交互：on() / off()</li>
-</ul>
-</li>
-</ul>
-<p><strong>回调函数</strong> </p>
-<p>evt参数代表的是事件对象 - 绑定了和事件相关的所有信息</p>
-<p>如果事件回调函数中要用到和事件相关的属性和方法就最好指定evt参数</p>
-<ul>
-<li>target / clientX / button / keyCode</li>
-<li>preventDefault() / stopPropagation()</li>
-</ul>
-<p>不管函数是否指定了evt参数当事件发生回调该函数时都会传入该参数</p>
-<p>调构造函数 前面加new</p>
-<p>数组里删元素要从后往前循环</p>
-<h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><p>原生Ajax - Asynchronous JavaScript and XML</p>
-<p>让浏览器向服务器发出异步请求(非阻塞式请求)，等服务器返回了响应数据(JSON/XML)后就可以对页面进行局部刷</p>
-<p>新，这样就可以在不中断用户体验的前提下刷新页面数据</p>
-<ul>
-<li>JavaScript发送HTTP请求获取数据默认只支持同源数据(同源策略)</li>
-<li><a href="http://www.abc.com/index.html">http://www.abc.com/index.html</a>  -&gt; JavaScript</li>
-<li>如果要跨域取数据是需要对方提供数据的服务器支持的</li>
-<li>JSONP / 服务器端设置支持跨域取数据(RESTful)</li>
-</ul>
-</script></p>
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/26/JavaScript基础/#post-footer" class="postShorten-excerpt_link link">
-                                در مورد پست بحث کنید
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2018/05/26/JavaScript基础/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" src=""/>
-                </div>
-            </a>
-            
-        
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
+        </li>
         
         
-        <li class="pagination-number">صفحه 1 از 1</li>
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/CSS层叠样式表知识汇总/" title="CSS层叠样式表知识汇总">CSS层叠样式表知识汇总</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/Html知识汇总/" title="Html知识汇总">Html知识汇总</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/CentOS7-2下安装MySQL5-7/" title="CentOS7.2下安装MySQL5.7">CentOS7.2下安装MySQL5.7</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>5</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/git版本控制软件的操作/" title="Git版本控制软件的操作">Git版本控制软件的操作</a>
+                </p>
+            </div>
+        </li>
+        
+        
     </ul>
 </div>
 
-</section>
 
 
-                <footer id="footer" class="main-content-wrap">
-    <span class="copyrights">
-        Copyrights &copy; 2018 Simon. All Rights Reserved.
-    </span>
-</footer>
-
-            </div>
-            
+<div class="cube-categories cube-sidebar" id="cube-categories">
+    <div class="title">
+        <a href="/categories">分类</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/categories/CSS样式表/">#CSS样式表</a>
         </div>
         
-
-
-<div id="about">
-    <div id="about-card">
-        <div id="about-btn-close">
-            <i class="fa fa-remove"></i>
+        
+        <div class="cube-box ">
+            <a href="/categories/Linux/">#Linux</a>
         </div>
         
-            <h4 id="about-card-name">Simon</h4>
         
-            <div id="about-card-bio"><p>یادداشت‌های یه المپیاد کامپیوتری در حال یادگیری لینوکس!</p>
-</div>
+        <div class="cube-box ">
+            <a href="/categories/HTML/">#HTML</a>
+        </div>
         
         
-            <div id="about-card-job">
-                <i class="fa fa-briefcase"></i>
-                <br/>
-                <p>المپیادی، برنامه نویس!</p>
-
-            </div>
+        <div class="cube-box-bg ">
+            <a href="/categories/JavaScript/">#JavaScript</a>
+        </div>
         
+        
+        <div class="cube-box ">
+            <a href="/categories/Python/">#Python</a>
+        </div>
         
     </div>
 </div>
 
+
+
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="/tags">标签云</a>
+    </div>
+    <div class="cube-boxs">
         
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
-        <!--SCRIPTS-->
-<script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/jquery.fancybox.js"></script>
-<script src="/assets/js/thumbs.js"></script>
-<script src="/assets/js/tranquilpeak.js"></script>
-<!--SCRIPTS END-->
+        <div class="cube-box-bg ">
+            <a href="/tags/CSS/">#CSS</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/Linux/">#Linux</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/前端html/">#前端html</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/JS/">#JS</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/Python/">#Python</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/git版本控制/">#git版本控制</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/pycharm的使用/">#pycharm的使用</a>
+        </div>
+        
+    </div>
+</div>
 
 
 
-    </body>
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>个人链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/simonzhao88" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="/images/weibo.jpg">
+            
+            <a href="https://weibo.com/u/2916037995" target="_blank">Weibo</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="/images/zhihu.png">
+            
+            <a href="https://www.zhihu.com/people/ben-dan-zhang-yu-68/activities" target="_blank">知乎</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>友情链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="/images/friends_links.jpg ">
+            <a href="https://alexyanglong.github.io" target="_blank">Alexyang</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="https://shuaixiaohao.github.io/images/fenghao.png">
+            <a href="https://shuaixiaohao.github.io/" target="_blank">帅小昊</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg">
+            <a href="https://threereyed.github.io/" target="_blank">强</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="https://gavinliu4011.github.io/img/avatar.jpg">
+            <a href="https://gavinliu4011.github.io/" target="_blank">gavinliu</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 Simon
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">simon</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
+</body>
 </html>
