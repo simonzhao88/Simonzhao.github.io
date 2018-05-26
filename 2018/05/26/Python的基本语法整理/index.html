@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Simon">
+    
+    <link rel="shortcut icon" href="%= config.favicon">
+    <meta name="description" content="愿尝尽世间苦，看遍人百态">
+    
+    
+    
+    
+    
+    
+    <title>Python的基本语法整理 | Simon&#39;s Blog</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
+
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: '加载中';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
+</head>
+<body>
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
+        
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        
+        <li>
+            <a class="lrc-control">开启歌词</a>
+        </li>
+        
+        <li>
+            <a class="scroll-to-top">回到顶部</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" background.jpg " alt="头部背景图片">
+    
+    <div class="cube-type">
+        <span class="cube-typed-title">Simon&#39;s Blog</span>
+        <span class="cube-typed-cursor">|</span>
+    </div>
+    
+</header>
+
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
+        
+            filter: blur(7px);
+            -webkit-filter: blur(7px);
+        
+            z-index: -1;
+            background-image: url('/images/background.png');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
+
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('/images/background.png');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">Simon&#39;s Blog</span>
+            <span class="cube-typed-cursor">|</span>
+        </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1100'
+            }
+
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            <div class="cube-article">
+    <h1 class="title">Python的基本语法整理</h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2018-05-26
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/Python/">Python</a>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h1 id="Python的基础语法知识整理集合"><a href="#Python的基础语法知识整理集合" class="headerlink" title="Python的基础语法知识整理集合"></a>Python的基础语法知识整理集合</h1><p>收集整理了Python的基础语法，包括数据类型的详细解释和Python自带的各类模块</p>
+<h2 id="1-进制之间的转换"><a href="#1-进制之间的转换" class="headerlink" title="1. 进制之间的转换"></a>1. 进制之间的转换</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">二进制 -&gt; 十进制</span><br><span class="line">八进制 -&gt; 二级制</span><br><span class="line">十进制 -&gt; 二进制</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="2-逻辑运算符"><a href="#2-逻辑运算符" class="headerlink" title="2.逻辑运算符"></a>2.逻辑运算符</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">逻辑运算符</span><br><span class="line">与(<span class="keyword">and</span>)   或(<span class="keyword">or</span>)  非(<span class="keyword">not</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="3-数学函数"><a href="#3-数学函数" class="headerlink" title="3.数学函数"></a>3.数学函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abs(): 返回数字的绝对值</span><br><span class="line">max(): 返回给定参数中的最大值</span><br><span class="line">min():返回给定参数中最小的值</span><br><span class="line">pow(): 求幂(求次方)  [求<span class="number">3</span>^<span class="number">4</span>  print(<span class="number">3</span>**<span class="number">4</span>)  print(pow(<span class="number">3</span>, <span class="number">4</span>))]</span><br><span class="line">round():四舍五入,如果只有一个参数,默认不保留小数点.参数二: 小数点后保留的位数</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">math.ceil():向上取整</span><br><span class="line">math.floor():向下取整</span><br><span class="line">math.sqrt():求开方</span><br><span class="line">math.modf():返回参数的整数部分和小数部分</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">random.choice():返回列表,元祖,字典中的某一个值</span><br><span class="line">random.choices():返回列表,元祖,字典中的指定个数值个值 k 关键字参数</span><br><span class="line">random.random():返回<span class="number">0</span><span class="number">-1</span>之间的数,  [<span class="number">0</span>, <span class="number">1</span>)  </span><br><span class="line">random.uniform():返回指定的一个区间范围的随机数 [, )</span><br><span class="line">random.randint():返回指定区间范围的随机整数 [, ]</span><br><span class="line">random.shuffle():将列表中的数据进行打乱排序</span><br></pre></td></tr></table></figure>
+<h2 id="4-字符串"><a href="#4-字符串" class="headerlink" title="4. 字符串"></a>4. 字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">len():求字符串,元组,列表,字典,集合的长度</span><br><span class="line">split():通过指定分隔符对字符串进行切片    </span><br><span class="line">str1 * <span class="number">3</span> (*将字符串拼接n次)</span><br><span class="line"></span><br><span class="line">提取某个字符串</span><br><span class="line">    str1[::<span class="number">3</span>] 正序输出 步长为<span class="number">3</span></span><br><span class="line">    str2 = str1[::<span class="number">-1</span>] 倒序输出</span><br><span class="line">    str2 = str1[::<span class="number">-2</span>] 倒序输出 步长为<span class="number">2</span></span><br><span class="line">转义字符:</span><br><span class="line">     \t(制表符) \n(换行符)</span><br></pre></td></tr></table></figure>
+<h2 id="5-字符串格式化"><a href="#5-字符串格式化" class="headerlink" title="5.字符串格式化"></a>5.字符串格式化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">%s:   给字符串站位</span><br><span class="line">%d:   给int类型站位</span><br><span class="line">%f:   给浮点类型站位,  默认保留<span class="number">6</span>为小数</span><br><span class="line">        %<span class="number">.2</span>f:  保留两位小数</span><br><span class="line">        %<span class="number">10.2</span>f  共<span class="number">10</span>位,保留两位小数,其他为使用空格补齐</span><br><span class="line">        %<span class="number">010.2</span>f  共<span class="number">10</span>位,保留两位小数,其他为使用<span class="number">0</span>补齐</span><br><span class="line">%c:   打印一个字符</span><br><span class="line">%o:   将十进制转换成八进制</span><br><span class="line">%x:   将十进制转换成十六进制</span><br></pre></td></tr></table></figure>
+<h2 id="6-字符串比较大小"><a href="#6-字符串比较大小" class="headerlink" title="6.字符串比较大小"></a>6.字符串比较大小</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">从第一个字符开始比较,将字符转换成ascii值进行比较</span><br><span class="line">如果小于则返回<span class="keyword">True</span>,否则返回<span class="keyword">False</span></span><br><span class="line"><span class="number">0</span><span class="number">-9</span>:<span class="number">48</span><span class="number">-57</span></span><br><span class="line">a-z: <span class="number">97</span><span class="number">-122</span></span><br><span class="line">A-Z:<span class="number">65</span><span class="number">-90</span></span><br></pre></td></tr></table></figure>
+<p> 附: 字符串相关函数</p>
+<h2 id="7-表达式"><a href="#7-表达式" class="headerlink" title="7.表达式"></a>7.表达式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">表达式为真的情况: <span class="keyword">not</span> <span class="number">0</span>    <span class="number">-1</span> 为真</span><br><span class="line">表达式为假的情况: <span class="number">0</span> <span class="string">''</span> <span class="keyword">None</span>  <span class="keyword">False</span> []  ()  &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="8-列表"><a href="#8-列表" class="headerlink" title="8.列表"></a>8.列表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">列表函数:</span><br><span class="line"><span class="number">1.</span> append()往列表后边追加一个元素([<span class="number">1</span>, <span class="number">2</span> ,<span class="number">3</span>],当做一个元素追加到列表中) <span class="comment"># 没有add()方法</span></span><br><span class="line"><span class="number">2.</span> extend()在末尾一次性追加另外一个列表中的多个值([<span class="number">1</span>, <span class="number">2</span> ,<span class="number">3</span>],当做三个个元素追加到列表中)</span><br><span class="line"><span class="number">3.</span> insert():在指定下标出添加一个元素,原来位置处的元素往后移动</span><br><span class="line">	list.insert(下标, 对象)</span><br><span class="line"><span class="number">4.</span> pop():将列表中指定下标的元素删除, 如果默认不传递参数,则删除的是最后一个元素</span><br><span class="line"><span class="meta">	@参数一: [可有可无] 列表对应的下标</span></span><br><span class="line"><span class="number">5.</span> remove():移除列表中指定的元素</span><br><span class="line"><span class="meta">	@参数一: 列表中的元素</span></span><br><span class="line"><span class="number">6.</span> clear():清除列表中所有的元素</span><br><span class="line"><span class="number">7.</span> index():获取列表元素锁对应的下标</span><br><span class="line"><span class="meta">    @参数一:  列表中的某一个元素  返回值:  列表中元素所对应的下标	</span></span><br><span class="line"><span class="number">8.</span> count(): 计算列表中元素出现的次数</span><br><span class="line"><span class="number">9.</span> reverse(): 用于反向列表中元素  等同于[::<span class="number">-1</span>]</span><br><span class="line">   reversed(seq) 函数返回一个反转的迭代器。</span><br><span class="line">   seq -- 要转换的序列，可以是 tuple, string, list 或 range。</span><br><span class="line"><span class="number">10.</span> sort(): 应用在 list 上的方法, 返回的是对已经存在的列表进行操作</span><br><span class="line">    sort(self, key=<span class="keyword">None</span>, reverse=<span class="keyword">False</span>)</span><br><span class="line">    sorted(): 所有可迭代的对象进行排序操作, 返回的是一个新的 list，而不是在原来的基础上进行的操作。</span><br><span class="line">    sorted(iterable, key=<span class="keyword">None</span>, reverse=<span class="keyword">False</span>)</span><br><span class="line">    <span class="comment"># reverse = True 降序 ， reverse = False 升序（默认）</span></span><br></pre></td></tr></table></figure>
+<p>引用传递</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在列表中,如果修改一个列表的元素,那么对应的另外一个列表的元素也改变</span><br><span class="line">list14 = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">list15 = list14 <span class="comment"># 内存地址相同</span></span><br></pre></td></tr></table></figure>
+<p>值传递</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在列表中修改一个元素的值时,对应的另外一个列表中的值是不发生改变的</span><br><span class="line">list16 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">list17 = list16[:] <span class="comment"># 内存地址不同</span></span><br><span class="line">list17 = list16.copy() <span class="comment"># 内存地址不同</span></span><br></pre></td></tr></table></figure>
+<h2 id="9-元组"><a href="#9-元组" class="headerlink" title="9.元组"></a>9.元组</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有序集合, 不可修改</span><br><span class="line">创建一个空的元组 tupel1 = ()  </span><br><span class="line">tuple1 = (<span class="number">4</span>, ) <span class="comment"># 定义只有一个参数的元组</span></span><br></pre></td></tr></table></figure>
+<h2 id="10-字典"><a href="#10-字典" class="headerlink" title="10.字典"></a>10.字典</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">无序集合, key唯一,必须是不可变类型</span><br><span class="line">访问获取方式: </span><br><span class="line">    dict[key]</span><br><span class="line">    dict.get(key)</span><br><span class="line">添加元素:</span><br><span class="line">    dict[key] = value <span class="comment"># key为原字典中不存在的键</span></span><br><span class="line">修改:</span><br><span class="line">    dict[key] = balue <span class="comment"># key为原字典中存在的键</span></span><br><span class="line">dict.keys() 以列表返回字典中所有的键</span><br><span class="line">dict.values() 以列表返回字典中所有的值</span><br><span class="line">dict.items() 以列表返回可遍历的(键, 值) 元组数组</span><br><span class="line">dict.setdefault() 返回指定键的值,如果键不存在于字典中，将会添加键并将值设为默认值</span><br><span class="line">dict.pop([key]) 删除指定键值对, 需传入参数 <span class="comment"># 没有remove()方法</span></span><br><span class="line">enumerate()用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 <span class="keyword">for</span> 循环当中。</span><br></pre></td></tr></table></figure>
+<h2 id="11-set-集合"><a href="#11-set-集合" class="headerlink" title="11.set 集合"></a>11.set 集合</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>set是无序</span><br><span class="line"><span class="number">2.</span>set集合是不可改变的</span><br><span class="line"><span class="number">3.</span>创建一个空的集合 set1 = set(());set1 = set([]);set1 = set(&#123;&#125;)</span><br><span class="line">set.add(): 增加一个元素(重复元素不能添加) <span class="comment"># 没有append()方法</span></span><br><span class="line">set.remove():删除元素, 参数是元素</span><br><span class="line">set.pop():删除最后一个元素</span><br><span class="line">set1 &amp; set2 交集</span><br><span class="line">set1 | set2 并集</span><br><span class="line">set1 - set2 差集</span><br><span class="line">set1 ^ set2 交并集</span><br></pre></td></tr></table></figure>
+<h2 id="12-数据类型转换"><a href="#12-数据类型转换" class="headerlink" title="12.数据类型转换"></a>12.数据类型转换</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict-&gt;set 取字典的键, 传入集合</span><br><span class="line">set3 = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125; 这是一个字典</span><br><span class="line">set --&gt; dict(错误) # 不能将集合转换成字典, 只有键, 没有值</span><br></pre></td></tr></table></figure>
+<h2 id="13-函数参数"><a href="#13-函数参数" class="headerlink" title="13.函数参数"></a>13.函数参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 不定长参数: *args</span><br><span class="line"><span class="number">2.</span> 关键字参数: **kw</span><br><span class="line"><span class="number">3.</span> 匿名函数: 关键字 <span class="keyword">lambda</span> eg: sum = <span class="keyword">lambda</span> x: x ** x</span><br><span class="line"><span class="number">4.</span> 偏函数: 导入模块 <span class="keyword">import</span> functools</span><br><span class="line">        functools.partical()就是创建一个新的函数.不需要自行定义函数.直接将结果赋值给一个变量,而		  这个变量就是一个函数.这个函数的目的是将默认参数给固定住</span><br><span class="line"><span class="number">5.</span> 回调函数: 定义函数时,将函数名作为参数传递过来,然后在函数里边再次调用函数</span><br></pre></td></tr></table></figure>
+<h2 id="14-文件操作"><a href="#14-文件操作" class="headerlink" title="14.文件操作"></a>14.文件操作</h2><h3 id="Python3-File-文件-方法"><a href="#Python3-File-文件-方法" class="headerlink" title="Python3 File(文件)方法"></a>Python3 File(文件)方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">open(path_name[, mode[, buffering]]) 打开文件 参数二:默认只读</span><br><span class="line">fileObject.read([size]) 从文件读取指定的字节数，如果未给定或为负则读取所有。</span><br><span class="line">fileObject.write() 写文件 <span class="comment"># 如果要写入字符串以外的数据,先将他转换为字符串</span></span><br><span class="line">fileObject.close() 关闭文件</span><br><span class="line">fileObject.readline([size]) 读取整行内容,包括\n字符, 如果给定参数则从文件开始读取指定的字符个数</span><br><span class="line">fileObject.readlines([sizeint]) 读取所有行并返回列表，若给定sizeint&gt;<span class="number">0</span>，返回总和大约为sizeint字节的行, 实际读取值可能比 sizeint 较大, 因为需要填充缓冲区。 </span><br><span class="line">f.tell() 返回一个整数,表示当前文件指针的位置(就是到文件头的比特数).</span><br><span class="line">f.seek(偏移量,[起始位置]) 用来移动文件指针 <span class="comment">#偏移量:单位:比特,可正可负起始位置:0-文件头,默认值;1-当前位置;2-文件尾</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f: print(line) 通过迭代器访问</span><br><span class="line"><span class="keyword">with</span> open(pathname, mode) <span class="keyword">as</span> f     </span><br><span class="line">    </span><br><span class="line">示列详见菜鸟教程Python3 File(文件)方法</span><br><span class="line">http://www.runoob.com/python3/python3-file-methods.html</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">StringIO</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line">f = StringIO([str]) 初始化, 然后像file一样读写</span><br><span class="line">在内存中读写str, 使用StringIO会比在文件中操作内容速度快</span><br><span class="line"></span><br><span class="line">ByteIO</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line">f = ByteIO([<span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span>]) 初始化,然后像文件一样读写</span><br><span class="line">在内存中读写二进制数据</span><br><span class="line"></span><br><span class="line"><span class="comment"># 总结 StringIO和BytesIO是在内存中操作str和bytes的方法，使得和读写文件具有一致的接口。</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>r</th>
+<th>r+</th>
+<th>w</th>
+<th>w+</th>
+<th>a</th>
+<th>a+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>读</td>
+<td>+</td>
+<td>+</td>
+<td></td>
+<td>+</td>
+<td></td>
+<td>+</td>
+</tr>
+<tr>
+<td>写</td>
+<td></td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr>
+<td>创建</td>
+<td></td>
+<td></td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr>
+<td>覆盖</td>
+<td></td>
+<td></td>
+<td>+</td>
+<td>+</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>指针在开始</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>指针在结尾</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>+</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Python-OS-文件-目录方法"><a href="#Python-OS-文件-目录方法" class="headerlink" title="Python OS 文件/目录方法"></a>Python OS 文件/目录方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">os.getcwd() 返回当前的工作目录 <span class="comment"># 获取绝对路径</span></span><br><span class="line">os.listdir(path) 返回指定的文件夹包含的文件或文件夹的名字的列表 </span><br><span class="line">os.mkdir(path) 在当前目录下创建新的目录</span><br><span class="line">os.rmdir(path) 删除目录, 只能删除空目录</span><br><span class="line">os.rename(src, dst) 对文件进行重命名</span><br><span class="line">os.stat(file) 获取文件属性</span><br><span class="line">os.remove(file) 删除文件 <span class="comment">#可以将本文件删除</span></span><br><span class="line">os.path.join(path1, path2) 路径拼接</span><br><span class="line">os.path.split(path) 拆分路径 <span class="comment"># 返回一个元组(目录, 最后一个文件/目录名称)</span></span><br><span class="line">os.path.splitext(path) 获取文件的或站名</span><br><span class="line">os.path.exists(path) 判断文件/目录是否存在</span><br><span class="line">os.path.isfile(path) 判断是否是文件</span><br><span class="line">os.path.getsize(file) 获取文件的大小</span><br><span class="line">os.path.dirname(path) 获取当前文件的目录</span><br><span class="line">os.path.basename(path) 获取当前文件/目录名</span><br><span class="line">示列网址:http://www.runoob.com/python/os-file-methods.html</span><br></pre></td></tr></table></figure>
+<h2 id="15-作用域"><a href="#15-作用域" class="headerlink" title="15.作用域"></a>15.作用域</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一旦在函数内部设置为<span class="keyword">global</span>,则该变量全局有效</span><br></pre></td></tr></table></figure>
+<h2 id="16-装饰器"><a href="#16-装饰器" class="headerlink" title="16.装饰器"></a>16.装饰器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">本质还是函数,  一般使用装饰器来装饰其他函数.本身还是函数的调用</span><br><span class="line"><span class="meta">@property</span></span><br><span class="line"><span class="meta">@属性名.setter</span></span><br><span class="line">广泛应用在类的定义中，可以让调用者写出简短的代码，同时保证对参数进行必要的检查，这样，程序运行时就减少了出错的可能性。</span><br></pre></td></tr></table></figure>
+<h2 id="17-日期和时间"><a href="#17-日期和时间" class="headerlink" title="17.日期和时间"></a>17.日期和时间</h2><h3 id="time-时间"><a href="#time-时间" class="headerlink" title="time(时间)"></a>time(时间)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">time.localtime()  获取本地时间</span><br><span class="line">time.asctime() / time.ctime() 将时间转换成用户可读时间, 返回str格式  (Thu Apr <span class="number">19</span> <span class="number">23</span>:<span class="number">02</span>:<span class="number">35</span> <span class="number">2018</span>) </span><br><span class="line">time.strftime(<span class="string">'%Y-%m-%d %X'</span>) 字符串的格式化输出, 返回str格式 <span class="number">2018</span><span class="number">-04</span><span class="number">-19</span> <span class="number">23</span>:<span class="number">07</span>:<span class="number">51</span></span><br><span class="line">time.strptime(timeObject, <span class="string">'%Y-%m-%d %X'</span>)  <span class="comment"># 将字符串的时间格式转换成元祖类型的时间格式</span></span><br></pre></td></tr></table></figure>
+<h3 id="datetime-日期"><a href="#datetime-日期" class="headerlink" title="datetime(日期)"></a>datetime(日期)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.now() 获取当前时间</span><br><span class="line">datetime.datetime(<span class="number">2020</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">20</span>, <span class="number">20</span>, <span class="number">20</span>) 获取指定的时间</span><br><span class="line">date1.strftime(<span class="string">'%Y-%m-%d %X'</span>)  时间字符串的格式化输出, 返回str格式</span><br></pre></td></tr></table></figure>
+<h3 id="calendar-日历"><a href="#calendar-日历" class="headerlink" title="calendar(日历)"></a>calendar(日历)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">calendar.month(<span class="number">2018</span>, <span class="number">4</span>) 获取指定的月份日历</span><br><span class="line">calendar.calendar(<span class="number">2018</span>) 获取指定的年份日历</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">更多时间日期方法想见网址:http://www.runoob.com/python/python-date-time.html</span><br></pre></td></tr></table></figure>
+<h3 id="csv文件"><a href="#csv文件" class="headerlink" title="csv文件"></a>csv文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">csv是跨多种形式的导入导出的标准格式 比如: mysql excel</span><br><span class="line">它是一种一纯文本形式来存储数据.文件中的每一行代表一条数据.每条记录包含逗号分隔</span><br></pre></td></tr></table></figure>
+<h2 id="18-部分模块"><a href="#18-部分模块" class="headerlink" title="18.部分模块"></a>18.部分模块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> keyword 标志符 查看所有关键字</span><br><span class="line"><span class="keyword">import</span> functools 偏函数</span><br><span class="line"><span class="keyword">import</span> collections </span><br><span class="line">	collections.deque方法可以创建一个两端都可以操作的列表,也就是说我们可以在两端进行添加和删除</span><br><span class="line"><span class="keyword">from</span> types <span class="keyword">import</span> MethodType</span><br><span class="line">	MethodType() 动态添加方法到类或对象实例中</span><br></pre></td></tr></table></figure>
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2018/05/26/Linux系统的基础操作命令/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                Linux系统的基础操作命令
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2018/05/26/pycharm的快捷键集合/">
+                Pycharm的快捷键集合
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
+        </div>
+        <div class="cube-right">
+            
+
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="搜索" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <span>Simon</span>
+    
+    
+    <a title="愿尝尽世间苦，看遍人百态">愿尝尽世间苦，看遍人百态</a>
+    
+    <div class="count">
+        <a class="count articles"><span>5</span>文章</a>
+        <a class="count tags"><span>4</span>标签</a>
+        <a class="count categories"><span>2</span>分类</a>
+    </div>
+</div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: '开启歌词',
+            close: '关闭歌词'
+        }
+    })(window)
+</script>
+
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>近期文章</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/CentOS7-2下安装MySQL5-7/" title="CentOS7.2下安装MySQL5.7">CentOS7.2下安装MySQL5.7</a>
+                </p>
+            </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/git版本控制软件的操作/" title="Git版本控制软件的操作">Git版本控制软件的操作</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/Linux系统的基础操作命令/" title="Linux系统的基础操作命令">Linux系统的基础操作命令</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/Python的基本语法整理/" title="Python的基本语法整理">Python的基本语法整理</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>5</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/05/26/pycharm的快捷键集合/" title="Pycharm的快捷键集合">Pycharm的快捷键集合</a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-categories cube-sidebar" id="cube-categories">
+    <div class="title">
+        <a href="/categories">分类</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/Linux/">#Linux</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/categories/Python/">#Python</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="/tags">标签云</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/Linux/">#Linux</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/Python/">#Python</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/git版本控制/">#git版本控制</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/pycharm的使用/">#pycharm的使用</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>个人链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/simonzhao88" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="/images/weibo.jpg">
+            
+            <a href="https://weibo.com/u/2916037995" target="_blank">Weibo</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="/images/zhihu.png">
+            
+            <a href="https://www.zhihu.com/people/ben-dan-zhang-yu-68/activities" target="_blank">知乎</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>友情链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="/images/friends_links.jpg ">
+            <a href="https://alexyanglong.github.io" target="_blank">Alexyang</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="https://shuaixiaohao.github.io/images/fenghao.png">
+            <a href="https://shuaixiaohao.github.io/" target="_blank">帅小昊</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg">
+            <a href="https://threereyed.github.io/" target="_blank">强</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="https://gavinliu4011.github.io/img/avatar.jpg">
+            <a href="https://gavinliu4011.github.io/" target="_blank">gavinliu</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 Simon
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">simon</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
+</body>
+</html>
