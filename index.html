@@ -183,18 +183,7 @@
     <article class="cube-excerpt-entry cube-markdown">
         
         
-           <h2 id="CentOS7-2-安装mysql5-7初始密码问题总结"><a href="#CentOS7-2-安装mysql5-7初始密码问题总结" class="headerlink" title="CentOS7.2 安装mysql5.7初始密码问题总结"></a>CentOS7.2 安装mysql5.7初始密码问题总结</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CentOS 7之后的版本yum的默认源中使用MariaDB替代原先MySQL。这对于想要使用MySQL的朋友来说，安装MySQL就比较麻烦了，笔者看了网上很多的教程，感觉不是很友好，幸运的是经过几天的摸索，笔者终于成功的装上了MySQL，现将安装的经验总结如下。</span><br></pre></td></tr></table></figure>
-<h3 id="1、下载mysql的源"><a href="#1、下载mysql的源" class="headerlink" title="1、下载mysql的源"></a>1、下载mysql的源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
-<p>###2、创建组、用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">建立用户mysql，组mysql。后面mysql就使用这个用户来运行（注意这也是mysql启动脚本中默认的用户，因此最好不要改名）。</span><br><span class="line">groupadd mysql</span><br><span class="line">useradd -r -g mysql mysql   -  （使用-r参数表示mysql用户是一个系统用户，不能登录）</span><br></pre></td></tr></table></figure>
-<h3 id="3、安装"><a href="#3、安装" class="headerlink" title="3、安装"></a>3、安装</h3><h4 id="3-1-解压"><a href="#3-1-解压" class="headerlink" title="3.1 解压"></a>3.1 解压</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">将前面得到的mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz 解压、解归档</span><br><span class="line">gunzip mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line">tar -xvf mysql-5.7.22-linux-glibc2.12-x86_64.tar</span><br><span class="line">将解压后的目录移动至 /usr/local ，并重命名为 mysql</span><br><span class="line">mv mysql-5.7.22-linux-glibc2.12-x86_64 /usr/local/mysql</span><br><span class="line">此后 /usr/local/mysql 就是安装目录了</span><br><span class="line">注意，如果mysql目录下没有data和tmp目录，手动新建，并修改权限</span><br></pre></td></tr></table></figure>
-<h4 id="3-2-目录权限设置"><a href="#3-2-目录权限设置" class="headerlink" title="3.2 目录权限设置"></a>3.2 目录权限设置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将mysql及其下所有的目录所有者和组均设为mysql:</span><br><span class="line">cd /usr/local/mysql</span><br><span class="line">chown mysql:mysql -R .</span><br></pre></td></tr></table></figure>
-<h4 id="3-3-初始化"><a href="#3-3-初始化" class="headerlink" title="3.3 初始化"></a>3.3 初始化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/mysql/bin/mysqld --initialize --user=mysql --datadir=/usr/local/mysql/data --basedir=/usr/local/mysql</span><br><span class="line">初始化成功后出现如下信息：</span><br><span class="line">201x-xx-xxT07:10:13.583130Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).</span><br><span class="line">201x-xx-xx T07:10:13.976219Z 0 [Warning] InnoDB: New log files created, LSN=45790</span><br><span class="line">201x-xx-xx T07:10:14.085666Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.</span><br><span class="line">201x-xx-xx T07:10:14.161899Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 1fa941f9-effd-11e5-b67d-000c2958cdc8.</span><br><span class="line">201x-xx-xx T07:10:14.165534Z 0 [Warning] Gtid table is not ready to be used. Table &apos;mysql.gtid_executed&apos; cannot be opened.</span><br><span class="line">201x-xx-xx T07:10:14.168555Z 1 [Note] A temporary password is generated for root@localhost: xxxxxxxxx, </span><br><span class="line">注意最后一行，它给了root一个初始密码，后面要登录的时候要用到这个密码。</span><br></pre></td></tr></table></figure>
-<h4 id="3-4-配置"><a href="#3-4-配置" class="headerlink" title="3.4 配置"></a>3.4 配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">配置 /etc 下的 my.cnf 文件，如果没有请创建</span><br><span class="line">[mysqld]</span><br><span class="line">basedir = /usr/local/mysql</span><br><span class="line">datadir = /usr/local/mysql/data</span><br><span class="line">port = 3306</span><br><span class="line">socket = /usr/local/mysql/tmp/mysql.sock</span><br><span class="line"> </span><br><span class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">socket = /usr/local/mysql/tmp/mysql.sock</span><br></pre></td></tr></table></figure>
-<h3 id="4、后台运行服务端"><a href="#4、后台运行服务端" class="headerlink" title="4、后台运行服务端"></a>4、后台运行服务端</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">注意：请将&#123;mysql&#125; 替换成 mysql安装路径</span><br><span class="line">&#123;mysql&#125;/bin/mysqld_safe &amp;</span><br><span class="line">ps -ef | grep mysql   或者  netstat -nap | grep 3306    - 查看进程</span><br><span class="line">&#123;mysql&#125;/bin/mysqladmin -uroot -p          - 停止</span><br></pre></td></tr></table></figure>
-<h3 id="5、设置mysql以服务运行并且开机启动"><a href="#5、设置mysql以服务运行并且开机启动" class="headerlink" title="5、设置mysql以服务运行并且开机启动"></a>5、设置mysql以服务运行并且开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">将&#123;mysql&#125;/ support-files/mysql.server 拷贝为/etc/init.d/mysql并设置运行权限</span><br><span class="line">cp mysql.server /etc/init.d/mysql</span><br><span class="line">chmod +x /etc/init.d/mysql</span><br><span class="line">把mysql注册为开机启动的服务</span><br><span class="line">chkconfig --add mysql</span><br><span class="line">当然也可以手动进行服务的开启和关闭：</span><br><span class="line">/etc/init.d/mysql start</span><br><span class="line">/etc/init.d/mysql stop</span><br></pre></td></tr></table></figure>
-<h3 id="6、连接客户端"><a href="#6、连接客户端" class="headerlink" title="6、连接客户端"></a>6、连接客户端</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">将客户端软链接到 /usr/local/bin</span><br><span class="line">ln -s &#123;mysql&#125;/bin/mysql /usr/local/bin/mysql</span><br><span class="line">客户端连接</span><br><span class="line">mysql -u root -p</span><br><span class="line">输入刚才的初始化密码进入</span><br><span class="line">进入之后，修改密码</span><br><span class="line">mysql&gt; alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;xxxxxxx&apos;;</span><br><span class="line">配置远程可以连接</span><br><span class="line">use mysql                #打开mysql数据库  </span><br><span class="line">#将host设置为%表示任何ip都能连接mysql，当然也可以将host指定为某个ip  </span><br><span class="line">update user set host=&apos;%&apos; where user=&apos;root&apos; and host=&apos;localhost&apos;;  </span><br><span class="line">flush privileges;        #刷新权限表，使配置生效 </span><br><span class="line">关闭远程连接，恢复mysql的默认设置（只能本地连接）</span><br><span class="line">#将host设置为localhost表示只能本地连接mysql  </span><br><span class="line">update user set host=&apos;localhost&apos; where user=&apos;root&apos;;  </span><br><span class="line">也可以添加一个用户名为aaa，密码为xxx，权限为%（表示任意ip都能连接）的远程连接用户</span><br><span class="line">grant all on *.* to &apos;aaa&apos;@&apos;%&apos; identified by &apos;xxx&apos;;</span><br></pre></td></tr></table></figure>
-
+           <h2 id="CentOS7-2-安装mysql5-7初始密码问题总结"><a href="#CentOS7-2-安装mysql5-7初始密码问题总结" class="headerlink" title="CentOS7.2 安装mysql5.7初始密码问题总结"></a>CentOS7.2 安装mysql5.7初始密码问题总结</h2><p>CentOS 7之后的版本yum的默认源中使用MariaDB替代原先MySQL。这对于想要使用MySQL的朋友来说，安装MySQL就比较麻烦了，笔者看了网上很多的教程，感觉不是很友好，幸运的是经过几天的摸索，笔者终于成功的装上了MySQL，现将安装的经验总结如下。</p>
         
     </article>
     <footer class="cube-excerpt-footer">
@@ -221,7 +210,10 @@
     <article class="cube-excerpt-entry cube-markdown">
         
         
-           <h1 id="Git-—-版本控制"><a href="#Git-—-版本控制" class="headerlink" title="Git — 版本控制"></a>Git — 版本控制</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1. 分布式版本控制系统 - 社会化编程</span><br><span class="line">	Git</span><br><span class="line">	BitMove - BitKeeper</span><br><span class="line">2. 集中式版本控制系统 - 版本控制服务器</span><br><span class="line">	锁定模式</span><br><span class="line">		CVS - Concurrent Version System</span><br><span class="line">		VSS - Visual Source Safe</span><br><span class="line">		ClearCase - IBM - Rational</span><br><span class="line">	合并模式</span><br><span class="line">		Sunversion - SVN</span><br></pre></td></tr></table></figure>
+           <h1 id="Git-—-版本控制"><a href="#Git-—-版本控制" class="headerlink" title="Git — 版本控制"></a>Git — 版本控制</h1><ol>
+<li>分布式版本控制系统 - 社会化编程<br>Git<br>BitMove - BitKeeper</li>
+<li>集中式版本控制系统 - 版本控制服务器<br>锁定模式<br>   CVS - Concurrent Version System<br>   VSS - Visual Source Safe<br>   ClearCase - IBM - Rational<br>合并模式<br>   Sunversion - SVN</li>
+</ol>
         
     </article>
     <footer class="cube-excerpt-footer">
@@ -276,7 +268,7 @@
         
         
            <h1 id="Python的基础语法知识整理集合"><a href="#Python的基础语法知识整理集合" class="headerlink" title="Python的基础语法知识整理集合"></a>Python的基础语法知识整理集合</h1><p>收集整理了Python的基础语法，包括数据类型的详细解释和Python自带的各类模块</p>
-<h2 id="1-进制之间的转换"><a href="#1-进制之间的转换" class="headerlink" title="1. 进制之间的转换"></a>1. 进制之间的转换</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">二进制 -&gt; 十进制</span><br><span class="line">八进制 -&gt; 二级制</span><br><span class="line">十进制 -&gt; 二进制</span><br></pre></td></tr></table></figure>
+<h2 id="1-进制之间的转换"><a href="#1-进制之间的转换" class="headerlink" title="1. 进制之间的转换"></a>1. 进制之间的转换</h2><p>二进制 -&gt; 十进制<br>八进制 -&gt; 二级制<br>十进制 -&gt; 二进制</p>
         
     </article>
     <footer class="cube-excerpt-footer">
@@ -487,7 +479,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/Linux/">#Linux</a>
         </div>
         
@@ -508,17 +500,17 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Linux/">#Linux</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Python/">#Python</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/git版本控制/">#git版本控制</a>
         </div>
         
