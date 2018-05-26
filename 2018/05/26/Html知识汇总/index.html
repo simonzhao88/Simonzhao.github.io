@@ -1,188 +1,221 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+    
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Simon&#39;s Blog">
+    <title>Html知识汇总 - Simon&#39;s Blog</title>
     <meta name="author" content="Simon">
     
-    <link rel="shortcut icon" href="%= config.favicon">
-    <meta name="description" content="愿尝尽世间苦，看遍人百态">
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Simon","sameAs":[]},"articleBody":"HTML什么是HTML?HTML 是用来描述网页的一种语言。\n\nTag: Content 装内容装数据\nCSS: Display 渲染,显示 \nJavaScript: Behavior 交互,行为\n\n\nHTML 指的是超文本标记语言: Hyper Text Markup Language\nHTML 不是一种编程语言，而是一种标记语言\n标记语言是一套标记标签 (markup tag)\nHTML 使用标记标签来描述网页\nHTML 文档包含了HTML 标签及文本 内容\nHTML文档也叫做web 页面\n\n\nHTML格式1234567891011&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=\"utf-8\"&gt;&lt;title&gt;主题title&gt;&lt;/head&gt;&lt;body&gt;    &lt;h1&gt;我的第一个标题&lt;/h1&gt;    &lt;p&gt;我的第一个段落。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;\n解析\\&lt;!DOCTYPE html&gt; 声明为 HTML5 文档\n\\  元素是 HTML 页面的根元素\n\\  元素包含了文档的元（meta）数据\n\\  元素描述了文档的标题\n\\  元素包含了可见的页面内容\n\\  元素定义一个大标题\n\\  元素定义一个段落\n\\ 水平分割线\n\\折行符\n\\\\ 下标标签\n\\\\ 上标标签\n\\\\ 强调标签,变粗\n\\\\ 强调标签,斜体\n列表无序列表12345&lt;ul&gt;\t&lt;li&gt;苹果&lt;/li&gt;\t&lt;li&gt;草莓&lt;/li&gt;\t&lt;li&gt;芒果&lt;/li&gt;&lt;/ul&gt;\n浏览器显示:\n\n苹果\n草莓\n芒果\n\n有序列表12345&lt;ol&gt;\t&lt;li&gt;苹果&lt;/li&gt;\t&lt;li&gt;草莓&lt;/li&gt;\t&lt;li&gt;芒果&lt;/li&gt;&lt;/ol&gt;\n浏览器显示:\n\n苹果\n草莓\n芒果\n\n自定义列表\\ 标签定义一个描述列表。\n\\ 标签与 \\ （定义项目/名字）和 \\ （描述每一个项目/名字）一起使用。\n123456&lt;dl&gt;\t\t&lt;dt&gt;星期&lt;/dt&gt;\t\t&lt;dd&gt;1 2 3 4 5 6 7&lt;/dd&gt;\t\t&lt;dt&gt;月份&lt;/dt&gt;\t\t&lt;dd&gt;1 2 3 4 5 6 7 8 9 10 11 12&lt;/dd&gt;\t&lt;/dl&gt;\n浏览器显示:\n星期​    1 2 3 4 5 6 7月份​    1 2 3 4 5 6 7 8 9 10 11 12\n链接1&lt;a href=\"url\"&gt;链接文本&lt;/a&gt;\nhref属性描述了链接的目标。\n页面链接\\\n12345当前页面跳转,target=\"_self\"可以不写&lt;a href=\"http://www.baidu.com\" target=\"_self\"&gt;百度&lt;/a&gt;&lt;a href=\"http://www.baidu.com\"&gt;百度&lt;/a&gt;打开新页面跳转&lt;a href=\"http://www.qq.com\" target=\"_blank\"&gt;腾讯&lt;/a&gt;\n锚点链接(id属性)\\\nid属性可用于创建在一个HTML文档书签标记。\nid=”tips”          tips-提示部分,自己定义\n123&lt;h1 id=\"top\"&gt;Hello,word!&lt;/h1&gt;&lt;a href=\"#top\"&gt;回顶部&lt;/a&gt;\n功能性链接1234自动弹出发邮箱功能&lt;a href=\"mailto:fenghao1994@163.com\"&gt;联系站长&lt;/a&gt;发起消息会话,wp.qq.com网站自动生成&lt;a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&amp;uin=&amp;site=qq&amp;menu=yes\"&gt;&lt;img border=\"0\" src=\"http://wpa.qq.com/pa?p=2::52\" alt=\"联系客服\" title=\"联系客服\"/&gt;&lt;/a&gt;\n图像定义图像的语法是:\n1&lt;img src=\"url\" alt=\"som_text\" &gt;\nsrc 指 “source”。源属性的值是图像的 URL 地址,或图片的相对路径。\nalt 为图像定义一串预备的可替换的文本。在浏览器无法载入图像时，替换文本属性告诉读者她们失去的信息。此时，浏览器将显示这个替代性的文本而不是图像。\nheight（高度） 与 width（宽度）属性用于设置图像的高度与宽度，属性值默认单位为像素，也可以不设置。\n1&lt;img src=\"./mm.jpg\" alt=\"这是一个女的\" width=\"300\" height=\"500\"&gt;\n表格1234567891011121314151617181920212223&lt;table border=\"1\"&gt;   &lt;caption&gt;个人信息统计&lt;/caption&gt;  &lt;tr&gt;    &lt;th&gt;姓名&lt;/th&gt;    &lt;th&gt;年龄&lt;/th&gt;    &lt;th&gt;身高&lt;/th&gt;    th&lt;th&gt;体重&lt;/th&gt;  &lt;/tr&gt;  &lt;tr&gt;    &lt;td&gt;王大锤&lt;/td&gt;    &lt;td&gt;20&lt;/td&gt;    &lt;td colspan=\"2\" align=\"center\"&gt;170&lt;/td&gt;  &lt;/tr&gt;  &lt;tr&gt;    &lt;td&gt;      &lt;img src=\"..jpg\" width=\"60\" height=\"20\"&gt;      &lt;div&gt;李小刀&lt;/div&gt;    &lt;/td&gt;    &lt;td&gt;18&lt;/td&gt;    &lt;td&gt;180&lt;/td&gt;    &lt;td&gt;58&lt;/td&gt;  &lt;/tr&gt;&lt;/table&gt;\n&lt;caption&gt; 定义表格标题\n&lt;th&gt; 定义表格的表头\n&lt;tr&gt; 定义表格的行\n&lt;td&gt; 定义表格单元\nalign=&quot;center&quot; 居中\ncolspan=&quot;&quot; 合并\n音频1234&lt;audio controls&gt;  &lt;source src=\"horse.ogg\"&gt;  &lt;source src=\"horse.mp3\"&gt;&lt;/audio&gt;\ncontrols 属性供添加播放、暂停和音量控件；可以换成autoplay 自动播放；autoplay loop自动循环播放。\n\\ 元素可以链接不同的音频文件，浏览器将使用第一个支持的音频文件\n视频1234&lt;video width=\"320\" height=\"240\" controls&gt;  &lt;source src=\"movie.mp4\" type=\"video/mp4\"&gt;  &lt;source src=\"movie.ogg\" type=\"video/ogg\"&gt;&lt;/video&gt;\ncontrols 元素提供了 播放、暂停和音量控件来控制视频。\n width 和 height 属性控制视频的尺寸.尽量不要写\n区块区块元素\n大多数 HTML 元素被定义为块级元素或内联元素。\n块级元素在浏览器显示时，通常会以新行来开始（和结束）。\n实例: \\, \\, \\, \\,\\\n内联元素\n内联元素在显示时通常不会以新行开始。\n实例: \\, \\, \\, \\\n\\ 元素\n\\ 元素是块级元素，它可用于组合其他 HTML 元素的容器。\n\\ 元素\n\\ 元素是内联元素，可用作文本的容器\n表单 表单用于收集不同类型的用户输入。表单是一个包含表单元素的区域。表单元素是允许用户在表单中输入内容,比如：文本域(textarea)、下拉列表、单选框(radio-buttons)、复选框(checkboxes)等等。表单使用表单标签 \\ 来设置\n输入元素多数情况下被用到的表单标签是输入标签（\\）。\n输入类型是由类型属性（type）定义的。\n文本域（Text Fields）文本域通过\\ 标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本域。\n123456789101112131415161718&lt;form action=\"\" method=\"post\" enctype=\"\"&gt;  &lt;fieldset&gt;    &lt;legend&gt;必填信息&lt;/legend&gt;    &lt;p&gt;      &lt;label&gt;用户名: &lt;/label&gt;      &lt;input type=\"text\" name=\"uid\" placeholder=\"请输入用户名\" required&gt;    &lt;/p&gt;    &lt;p&gt;      &lt;label&gt;密码 &lt;/label&gt;      &lt;input type=\"password\" name=\"pwd\"&gt;    &lt;/p&gt;    &lt;p&gt;      &lt;label&gt;性别: &lt;/label&gt;      &lt;input type=\"radio\" name=\"sex\"&gt;男      &lt;input type=\"radio\" name=\"sex\" checked&gt;女    &lt;/p&gt;  &lt;/fieldset&gt;&lt;/form&gt;\naction “”里面是要提交的地址\nmethod 规定如何发送表单数据（表单数据发送到 action属性所规定的页面）。共有两种方法：post 方法和 get 方法\n – get\n\nget是从服务器上获取数据\nget是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到\nget传送的数据量较小。\nget安全性非常低。\n– post\n\npost是向服务器传送数据\n\npost是通过HTTP post机制,将表单内各个字段与其内容放置在HTML HEADER内一起传送到action属性所指的URL地址。用户看不到这个过程。\npost传送的数据量较大，一般被默认为不受限制。\npost安全性较高。\n\nenctype 属性规定在将表单数据发送到服务器之前如何对其进行编码。\n注意：只有 method=”post” 时才使用 enctype 属性。\n&lt;fieldset&gt;&lt;/fieldset&gt; 定义了一组相关的表单元素，并使用外框包含起来\n&lt;legend&gt;&lt;/legend&gt; 定义了 \\ 元素的标题\n&lt;label&gt; 定义了 \\ 元素的标签，一般为输入标题\n&lt;input&gt; 输入标签输入类型是由类型属性（type）定义的。\nname 属性规定表单的名称,用于在 JavaScript 中引用元素，或者在表单提交之后引用表单数据。\nplaceholder 属性规定可描述输入字段预期值的简短的提示信息,该提示会在用户输入值之前显示在输入字段中。\n注意：placeholder 属性适用于下面的 input 类型：text、search、url、tel、email 和 password。\nrequired 属性是一个布尔属性,规定必需在提交表单之前填写输入字段。\n注意：required 属性适用于下面的 input 类型：text、search、url、tel、email、password、date pickers、number、checkbox、radio 和 file。\n密码字段密码字段通过标签\\ 来定义\n单选按钮&lt;input type=&quot;radio&quot;&gt;  标签定义了表单单选框选项\nchecked选框默认选项\n复选框\\ 定义了复选框. 用户需要从若干给定的选择中选取一个或若干选项\n123456&lt;label&gt;爱好: &lt;/label&gt;&lt;input type=\"checkbox\" name=\"fav\"&gt;游戏&lt;input type=\"checkbox\" name=\"fav\" checked&gt;阅读&lt;input type=\"checkbox\" name=\"fav\" checked disabled&gt;旅游&lt;input type=\"checkbox\" name=\"fav\"&gt;运动&lt;input type=\"checkbox\" name=\"fav\"&gt;其他\nchecked disabled 默认必选项,不能取消.\n文件上传1&lt;input type=\"file\" name=\"photo1\" multiple&gt;\nmultiple 可接受多个值的文件上传字段\n日期1&lt;input type=\"date\" name=\"b\"&gt;\n下拉列表选项\\定义了下拉选项列表\n\\定义下拉列表中的选项\n12345678&lt;label&gt;籍贯: &lt;/label&gt;&lt;select&gt;name=\"prov\"   &lt;option&gt;北京&lt;/option&gt;  &lt;option&gt;上海&lt;/option&gt;  &lt;option selected&gt;四川&lt;/option&gt;  &lt;option&gt;云南&lt;/option&gt;  &lt;option&gt;海南&lt;/option&gt;&lt;/select&gt;\nselected 默认选项\n多行文本框\\ 标签定义一个多行的文本输入控件。文本区域中可容纳无限数量的文本，其中的文本的默认字体是等宽字体（通常是 Courier）。可以通过 cols 和 rows 属性来规定 textarea 的尺寸大小\n字符实体12345678910111213141516 \t空格\t\t&amp;nbsp;&lt;\t小于号\t\t&amp;lt;\t&gt;\t大于号\t\t&amp;gt;&amp;\t和号\t\t&amp;amp;&quot;\t引号\t\t&amp;quot;&apos;\t撇号 \t\t&amp;apos; (IE不支持)￠\t分\t\t&amp;cent;£\t镑\t\t&amp;pound;\t¥\t人民币/日元\t€\t欧元\t\t&amp;euro;§\t小节\t\t&amp;sect;×\t乘号\t\t&amp;times;\t÷\t除号\t\t&amp;divide;© \t版权\t\t&amp;copy;®\t注册商标   &amp;reg;™\t商标\t\t&amp;trade;\n\n","dateCreated":"2018-05-26T16:13:14+08:00","dateModified":"2018-05-26T16:16:23+08:00","datePublished":"2018-05-26T16:13:14+08:00","description":"HTML什么是HTML?HTML 是用来描述网页的一种语言。\n\nTag: Content 装内容装数据\nCSS: Display 渲染,显示 \nJavaScript: Behavior 交互,行为\n\n\nHTML 指的是超文本标记语言: Hyper Text Markup Language\nHTML 不是一种编程语言，而是一种标记语言\n标记语言是一套标记标签 (markup tag)\nHTML 使用标记标签来描述网页\nHTML 文档包含了HTML 标签及文本 内容\nHTML文档也叫做web 页面\n","headline":"Html知识汇总","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2018/05/26/Html知识汇总/"},"publisher":{"@type":"Organization","name":"Simon","sameAs":[]},"url":"http://yoursite.com/2018/05/26/Html知识汇总/","keywords":"前端html"}</script>
+    <meta name="description" content="HTML什么是HTML?HTML 是用来描述网页的一种语言。  Tag: Content 装内容装数据 CSS: Display 渲染,显示  JavaScript: Behavior 交互,行为   HTML 指的是超文本标记语言: Hyper Text Markup Language HTML 不是一种编程语言，而是一种标记语言 标记语言是一套标记标签 (markup tag) HTML 使用">
+<meta name="keywords" content="前端html">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Html知识汇总">
+<meta property="og:url" content="http://yoursite.com/2018/05/26/Html知识汇总/index.html">
+<meta property="og:site_name" content="Simon&#39;s Blog">
+<meta property="og:description" content="HTML什么是HTML?HTML 是用来描述网页的一种语言。  Tag: Content 装内容装数据 CSS: Display 渲染,显示  JavaScript: Behavior 交互,行为   HTML 指的是超文本标记语言: Hyper Text Markup Language HTML 不是一种编程语言，而是一种标记语言 标记语言是一套标记标签 (markup tag) HTML 使用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-26T08:16:23.886Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Html知识汇总">
+<meta name="twitter:description" content="HTML什么是HTML?HTML 是用来描述网页的一种语言。  Tag: Content 装内容装数据 CSS: Display 渲染,显示  JavaScript: Behavior 交互,行为   HTML 指的是超文本标记语言: Hyper Text Markup Language HTML 不是一种编程语言，而是一种标记语言 标记语言是一套标记标签 (markup tag) HTML 使用">
+    
+    
+        
     
     
     
     
     
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <!--STYLES END-->
     
-    <title>Html知识汇总 | Simon&#39;s Blog</title>
-    <!-- inject:style -->
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <!-- endinject -->
-    <style>
-        .cube-loading {
-            top: 0;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: url('/images/lg/loading.gif') no-repeat center center;
-            background-color: rgba(0,0,0,.7);
-        }
 
-        .cube-loading.out {
-            display: none;
-        }
-
-        .cube-loading:before {
-            display: block;
-            content: '加载中';
-            position: relative;
-            width: 100%;
-            top: 50%;
-            right: -50%;
-            color: #fff;
-        }
-
-        @media(max-width: 768px) {
-            .cube-loading:before {
-                font-size: 1.2em;
-                transform: translate(-24px,20px);
-                -webkit-transform: translate(-24px,20px);
-                -o-transform: translate(-24px,20px);
-                -ms-transform: translate(-24px,20px);
-            }
-        }
-
-        @media(min-width: 768px) {
-            .cube-loading:before {
-
-            }
-        }
-    </style>
     
 </head>
-<body>
-<div class="cube-body">
-    <nav id="cube-top-memu" class="cube-menu">
-    <ul class="cube-menu-collapse">
-        
-        <li>
-            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
-            <a href="/">首页</a>
-        </li>
-        
-        <li>
-            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
-            <a href="/archives">归档</a>
-        </li>
-        
-        <li>
-            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
-            <a href="/categories">分类</a>
-        </li>
-        
-        <li>
-            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
-            <a href="/tags">标签</a>
-        </li>
-        
-        <li>
-            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
-            <a href="/about-me">关于我</a>
-        </li>
-        
-    </ul>
-</nav>
-<nav class="cube-side-menu" id="cube-side-menu">
-    <ul class="cube-menu-list">
-        
-        <li>
-            <a class="lrc-control">开启歌词</a>
-        </li>
-        
-        <li>
-            <a class="scroll-to-top">回到顶部</a>
-        </li>
-    </ul>
-</nav>
-    <header class="cube-header" id="cube-header">
-    <img src=" background.jpg " alt="头部背景图片">
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
     
-    <div class="cube-type">
-        <span class="cube-typed-title">Simon&#39;s Blog</span>
-        <span class="cube-typed-cursor">|</span>
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Simon&#39;s Blog</a>
     </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+        </a>
     
 </header>
 
-    <style>
-        nav.cube-menu:before {
-            content: '';
-            visibility: hidden;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 44px;
-        
-            filter: blur(7px);
-            -webkit-filter: blur(7px);
-        
-            z-index: -1;
-            background-image: url('/images/background.png');
-            background-repeat: no-repeat;
-            background-position: center -356px;
-            background-size: cover;
-            background-color: transparent;
-        }
+            <!-- Define author's picture -->
 
-        header.cube-background.cube-header-background {
-            visibility: hidden;
-            background-image: url('/images/background.png');
-            background-position: center -400px;
-        }
-    </style>
-    <header class="cube-background cube-header-background">
-        
-        <div class="cube-type">
-            <span class="cube-typed-title">Simon&#39;s Blog</span>
-            <span class="cube-typed-cursor">|</span>
-        </div>
-        
-    </header>
-    <div class="load-header-background"></div>
-    <script>
-        (function (window) {
 
-            window.headerModule = {}
-            window.headerModule.image = {
-                width: '2000',
-                height: '1100'
-            }
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="خانه"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">خانه</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="دسته‌بندی‌ها"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">دسته‌بندی‌ها</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="برچسب‌ها"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">برچسب‌ها</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="آرشیو مطالب"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">آرشیو مطالب</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                            title="جست‌و‌جو"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">جست‌و‌جو</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="درباره"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">درباره</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
 
-        })(window)
-    </script>
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
     
-    <div class="cube-content">
-        <div class="cube-left">
-            <div class="cube-article">
-    <h1 class="title">Html知识汇总</h1>
     
-    <div class="cube-article-header">
-        <div class="cube-article-date">
-            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-            <!-- moment.js对象 -->
-            2018-05-26
-        </div>
-        <div class="cube-article-tags">
-    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+        <div class="post-header main-content-wrap text-left">
     
-    <a href="/tags/前端html/">前端html</a>
+        <h1 class="post-title">
+            Html知识汇总
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-05-26T16:13:14+08:00">
+	
+		    星期六، 26 5月 2018
+    	
+    </time>
+    
+        <span>در </span>
+        
+    <a class="category-link" href="/categories/HTML/">HTML</a>
+
+
     
 </div>
-    </div>
+
     
-    <div class="cube-article-content cube-markdown">
-        
-        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="什么是HTML"><a href="#什么是HTML" class="headerlink" title="什么是HTML?"></a>什么是HTML?</h3><p>HTML 是用来描述网页的一种语言。</p>
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="什么是HTML"><a href="#什么是HTML" class="headerlink" title="什么是HTML?"></a>什么是HTML?</h3><p>HTML 是用来描述网页的一种语言。</p>
 <ol>
 <li>Tag: Content 装内容装数据</li>
 <li>CSS: Display 渲染,显示 </li>
@@ -318,341 +351,247 @@
 <h3 id="字符实体"><a href="#字符实体" class="headerlink" title="字符实体"></a>字符实体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> 	空格		&amp;nbsp;</span><br><span class="line">&lt;	小于号		&amp;lt;	</span><br><span class="line">&gt;	大于号		&amp;gt;</span><br><span class="line">&amp;	和号		&amp;amp;</span><br><span class="line">&quot;	引号		&amp;quot;</span><br><span class="line">&apos;	撇号 		&amp;apos; (IE不支持)</span><br><span class="line">￠	分		&amp;cent;</span><br><span class="line">£	镑		&amp;pound;	</span><br><span class="line">¥	人民币/日元	</span><br><span class="line">€	欧元		&amp;euro;</span><br><span class="line">§	小节		&amp;sect;</span><br><span class="line">×	乘号		&amp;times;	</span><br><span class="line">÷	除号		&amp;divide;</span><br><span class="line">© 	版权		&amp;copy;</span><br><span class="line">®	注册商标   &amp;reg;</span><br><span class="line">™	商标		&amp;trade;</span><br></pre></td></tr></table></figure>
 <hr>
 </h1></h1>
-    </div>
-</div>
+            
 
-<div class="cube-article-nav">
-    <ul>
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-        <li class="prev">
-            <a href="/2018/05/26/CSS层叠样式表知识汇总/">
-                <i class="cube-icon cube-prev" aria-hidden="true"></i>
-                CSS层叠样式表知识汇总
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">تگ شده در</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/前端html/">前端html</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/26/CSS层叠样式表知识汇总/" data-tooltip="CSS层叠样式表知识汇总" aria-label="قبلی: CSS层叠样式表知识汇总">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">قبلی</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/26/CentOS7-2下安装MySQL5-7/" data-tooltip="CentOS7.2下安装MySQL5.7" aria-label="بعدی: CentOS7.2下安装MySQL5.7">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">بعدی</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Diesen Beitrag teilen">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/26/Html知识汇总/" title="در فیسبوک به اشتراک بگذارید">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+            </li>
         
-        <li class="next">
-            <a href="/2018/05/26/CentOS7-2下安装MySQL5-7/">
-                CentOS7.2下安装MySQL5.7
-                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2018/05/26/Html知识汇总/" title="در توییتر به اشتراک بگذارید">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/26/Html知识汇总/" title="در گوگل پلاس به اشتراک بگذارید">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
             </a>
         </li>
-        
     </ul>
 </div>
 
 
-<!-- TODO 根据theme.comment的内容进行入口选择 -->
-
-
-
-        </div>
-        <div class="cube-right">
+        
+        
             
-
-<div class="cube-search cube-sidebar" id="cube-search">
-    <div class="search-container">
-        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
-        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
-    </div>
-    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
-</div>
-<script>
-    (function (window) {
-        'use strict';
-        window.searchModule = {}
-        window.searchModule.JSONUrl = '/content.json'
-        window.searchModule.rootUrl = '/'
-    })(window)
-</script>
-<div class="cube-search-form">
-    <div class="cube-search-control">
-        <input type="text" placeholder="搜索" class="search-input">
-        <a class="close-button">
-            <i class="cube-icon cube-close" aria-hidden="true"></i>
-        </a>
-    </div>
-    <div class="cube-search-result"></div>
-</div>
-
-
-<div class="cube-author cube-sidebar" id="cube-author">
-    
-    
-    <span>Simon</span>
-    
-    
-    <a title="愿尝尽世间苦，看遍人百态">愿尝尽世间苦，看遍人百态</a>
-    
-    <div class="count">
-        <a class="count articles"><span>8</span>文章</a>
-        <a class="count tags"><span>7</span>标签</a>
-        <a class="count categories"><span>5</span>分类</a>
-    </div>
-</div>
-
-
-
-<div class="cube-music cube-sidebar" id="cube-music">
-    <div class="cube-player aplayer" id="cube-player"></div>
-</div>
-<script>
-    (function (window) {
-        window.musicModule = {}
-        window.musicModule.musicConfig = '{"narrow":false,"autoplay":true,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
-        window.musicModule.lrcConfig = {
-            open: '开启歌词',
-            close: '关闭歌词'
-        }
-    })(window)
-</script>
-
-
-
-<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
-    <div class="title">
-        <a>近期文章</a>
-    </div>
-    <ul class="list">
-        
-        
-        <li>
-            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
-            
-            <div class="normal">
-                <p class="index first">
-                    <span>1</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/JavaScript基础/" title="JavaScript基础">JavaScript基础</a>
-                </p>
-            </div>
-            
-        </li>
-        
-        
-        
-        <li>
-            <div class="normal">
-                <p class="index">
-                    <span>2</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/CSS层叠样式表知识汇总/" title="CSS层叠样式表知识汇总">CSS层叠样式表知识汇总</a>
-                </p>
-            </div>
-        </li>
-        
-        
-        
-        <li>
-            <div class="normal">
-                <p class="index">
-                    <span>3</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/Html知识汇总/" title="Html知识汇总">Html知识汇总</a>
-                </p>
-            </div>
-        </li>
-        
-        
-        
-        <li>
-            <div class="normal">
-                <p class="index">
-                    <span>4</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/CentOS7-2下安装MySQL5-7/" title="CentOS7.2下安装MySQL5.7">CentOS7.2下安装MySQL5.7</a>
-                </p>
-            </div>
-        </li>
-        
-        
-        
-        <li>
-            <div class="normal">
-                <p class="index">
-                    <span>5</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/git版本控制软件的操作/" title="Git版本控制软件的操作">Git版本控制软件的操作</a>
-                </p>
-            </div>
-        </li>
-        
-        
-    </ul>
-</div>
-
-
-
-<div class="cube-categories cube-sidebar" id="cube-categories">
-    <div class="title">
-        <a href="/categories">分类</a>
-    </div>
-    <div class="cube-boxs">
-        
-        
-        <div class="cube-box ">
-            <a href="/categories/CSS样式表/">#CSS样式表</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/categories/Linux/">#Linux</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/categories/HTML/">#HTML</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/categories/JavaScript/">#JavaScript</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/categories/Python/">#Python</a>
-        </div>
         
     </div>
-</div>
+</article>
 
 
 
-<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
-    <div class="title">
-        <a href="/tags">标签云</a>
-    </div>
-    <div class="cube-boxs">
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/CSS/">#CSS</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/Linux/">#Linux</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/前端html/">#前端html</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/JS/">#JS</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/Python/">#Python</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/tags/git版本控制/">#git版本控制</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/pycharm的使用/">#pycharm的使用</a>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<div class="cube-links cube-sidebar" id="cube-links">
-    <div class="title">
-        <a>个人链接</a>
-    </div>
-    <ul class="list">
-        
-        <li>
-            
-            
-            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
-            
-            <a href="https://github.com/simonzhao88" target="_blank">GitHub</a>
-        </li>
-        
-        <li>
-            
-            
-            <img src="/images/weibo.jpg">
-            
-            <a href="https://weibo.com/u/2916037995" target="_blank">Weibo</a>
-        </li>
-        
-        <li>
-            
-            
-            <img src="/images/zhihu.png">
-            
-            <a href="https://www.zhihu.com/people/ben-dan-zhang-yu-68/activities" target="_blank">知乎</a>
-        </li>
-        
-    </ul>
-</div>
-
-
-
-<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
-    <div class="title">
-        <a>友情链接</a>
-    </div>
-    <ul class="list">
-        
-        <li>
-            <!-- TODO change avatar.png to friend.png-->
-            <img src="/images/friends_links.jpg ">
-            <a href="https://alexyanglong.github.io" target="_blank">Alexyang</a>
-        </li>
-        
-        <li>
-            <!-- TODO change avatar.png to friend.png-->
-            <img src="https://shuaixiaohao.github.io/images/fenghao.png">
-            <a href="https://shuaixiaohao.github.io/" target="_blank">帅小昊</a>
-        </li>
-        
-        <li>
-            <!-- TODO change avatar.png to friend.png-->
-            <img src="http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg">
-            <a href="https://threereyed.github.io/" target="_blank">强</a>
-        </li>
-        
-        <li>
-            <!-- TODO change avatar.png to friend.png-->
-            <img src="https://gavinliu4011.github.io/img/avatar.jpg">
-            <a href="https://gavinliu4011.github.io/" target="_blank">gavinliu</a>
-        </li>
-        
-    </ul>
-</div>
-
-
-        </div>
-    </div>
-</div>
-<footer class="cube-footer">
-    
-© 2017 Simon
-
-<br>
-Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">simon</a>
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 Simon. All Rights Reserved.
+    </span>
 </footer>
-<!-- inject:script -->
-<script src="/js/script.js"></script>
-<!-- endinject -->
-<div class="cube-loading out"></div>
-</body>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/26/CSS层叠样式表知识汇总/" data-tooltip="CSS层叠样式表知识汇总" aria-label="قبلی: CSS层叠样式表知识汇总">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">قبلی</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/26/CentOS7-2下安装MySQL5-7/" data-tooltip="CentOS7.2下安装MySQL5.7" aria-label="بعدی: CentOS7.2下安装MySQL5.7">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">بعدی</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Diesen Beitrag teilen">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/26/Html知识汇总/" title="در فیسبوک به اشتراک بگذارید">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2018/05/26/Html知识汇总/" title="در توییتر به اشتراک بگذارید">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/26/Html知识汇总/" title="در گوگل پلاس به اشتراک بگذارید">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/26/Html知识汇总/">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i><span>در فیسبوک به اشتراک بگذارید</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2018/05/26/Html知识汇总/">
+                    <i class="fa fa-twitter" aria-hidden="true"></i><span>در توییتر به اشتراک بگذارید</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/26/Html知识汇总/">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i><span>در گوگل پلاس به اشتراک بگذارید</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">Simon</h4>
+        
+            <div id="about-card-bio"><p>یادداشت‌های یه المپیاد کامپیوتری در حال یادگیری لینوکس!</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>المپیادی، برنامه نویس!</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
 </html>

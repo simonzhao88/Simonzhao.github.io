@@ -1,497 +1,304 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+    
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Simon&#39;s Blog">
+    <title>Tag: CSS - Simon&#39;s Blog</title>
     <meta name="author" content="Simon">
     
-    <link rel="shortcut icon" href="%= config.favicon">
+    
+    
+    <script type="application/ld+json">{}</script>
     <meta name="description" content="愿尝尽世间苦，看遍人百态">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Simon&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/CSS/index.html">
+<meta property="og:site_name" content="Simon&#39;s Blog">
+<meta property="og:description" content="愿尝尽世间苦，看遍人百态">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Simon&#39;s Blog">
+<meta name="twitter:description" content="愿尝尽世间苦，看遍人百态">
+    
+    
+        
     
     
     
     
     
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <!--STYLES END-->
     
-    <title>标签: CSS | Simon&#39;s Blog</title>
-    <!-- inject:style -->
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <!-- endinject -->
-    <style>
-        .cube-loading {
-            top: 0;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: url('/images/lg/loading.gif') no-repeat center center;
-            background-color: rgba(0,0,0,.7);
-        }
 
-        .cube-loading.out {
-            display: none;
-        }
-
-        .cube-loading:before {
-            display: block;
-            content: '加载中';
-            position: relative;
-            width: 100%;
-            top: 50%;
-            right: -50%;
-            color: #fff;
-        }
-
-        @media(max-width: 768px) {
-            .cube-loading:before {
-                font-size: 1.2em;
-                transform: translate(-24px,20px);
-                -webkit-transform: translate(-24px,20px);
-                -o-transform: translate(-24px,20px);
-                -ms-transform: translate(-24px,20px);
-            }
-        }
-
-        @media(min-width: 768px) {
-            .cube-loading:before {
-
-            }
-        }
-    </style>
     
 </head>
-<body>
-<div class="cube-body">
-    <nav id="cube-top-memu" class="cube-menu">
-    <ul class="cube-menu-collapse">
-        
-        <li>
-            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
-            <a href="/">首页</a>
-        </li>
-        
-        <li>
-            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
-            <a href="/archives">归档</a>
-        </li>
-        
-        <li>
-            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
-            <a href="/categories">分类</a>
-        </li>
-        
-        <li>
-            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
-            <a href="/tags">标签</a>
-        </li>
-        
-        <li>
-            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
-            <a href="/about-me">关于我</a>
-        </li>
-        
-    </ul>
-</nav>
-<nav class="cube-side-menu" id="cube-side-menu">
-    <ul class="cube-menu-list">
-        
-        <li>
-            <a class="lrc-control">开启歌词</a>
-        </li>
-        
-        <li>
-            <a class="scroll-to-top">回到顶部</a>
-        </li>
-    </ul>
-</nav>
-    <header class="cube-header" id="cube-header">
-    <img src=" background.jpg " alt="头部背景图片">
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
     
-    <div class="cube-type">
-        <span class="cube-typed-title">Simon&#39;s Blog</span>
-        <span class="cube-typed-cursor">|</span>
+
+<header id="header" data-behavior="1">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Simon&#39;s Blog</a>
     </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+        </a>
     
 </header>
 
-    <style>
-        nav.cube-menu:before {
-            content: '';
-            visibility: hidden;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 44px;
-        
-            filter: blur(7px);
-            -webkit-filter: blur(7px);
-        
-            z-index: -1;
-            background-image: url('/images/background.png');
-            background-repeat: no-repeat;
-            background-position: center -356px;
-            background-size: cover;
-            background-color: transparent;
-        }
+            <!-- Define author's picture -->
 
-        header.cube-background.cube-header-background {
-            visibility: hidden;
-            background-image: url('/images/background.png');
-            background-position: center -400px;
-        }
-    </style>
-    <header class="cube-background cube-header-background">
-        
-        <div class="cube-type">
-            <span class="cube-typed-title">Simon&#39;s Blog</span>
-            <span class="cube-typed-cursor">|</span>
-        </div>
-        
-    </header>
-    <div class="load-header-background"></div>
-    <script>
-        (function (window) {
 
-            window.headerModule = {}
-            window.headerModule.image = {
-                width: '2000',
-                height: '1100'
-            }
-
-        })(window)
-    </script>
-    
-    <div class="cube-content">
-        <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
-    
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">CSS</h1>
+<nav id="sidebar" data-behavior="1">
+    <div class="sidebar-container">
         
-        <ul class="posts">
+        
+            <ul class="sidebar-buttons">
             
-            <li class="post">
-                <a href="/2018/05/26/CSS层叠样式表知识汇总/">CSS层叠样式表知识汇总</a>
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="خانه"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">خانه</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="دسته‌بندی‌ها"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">دسته‌بندی‌ها</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="برچسب‌ها"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">برچسب‌ها</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="آرشیو مطالب"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">آرشیو مطالب</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                            title="جست‌و‌جو"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">جست‌و‌جو</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="درباره"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">درباره</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
             </li>
             
         </ul>
         
     </div>
+</nav>
+
+            
+            <div id="main" data-behavior="1"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/05/26/CSS层叠样式表知识汇总/">
+                            CSS层叠样式表知识汇总
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-26T16:16:55+08:00">
+	
+		    星期六، 26 5月 2018
+    	
+    </time>
+    
+        <span>در </span>
+        
+    <a class="category-link" href="/categories/CSS样式表/">CSS样式表</a>
+
+
     
 </div>
+
+            </div>
+            
+                <div class="postShorten-excerpt">
+                    <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="什么是-CSS"><a href="#什么是-CSS" class="headerlink" title="什么是 CSS?"></a>什么是 CSS?</h3><ul>
+<li>CSS 指层叠样式表 (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)</li>
+<li>样式定义<strong>如何显示</strong> HTML 元素</li>
+<li>样式通常存储在<strong>样式表</strong>中</li>
+<li>把样式添加到 HTML 4.0 中，是为了<strong>解决内容与表现分离的问题</strong></li>
+<li><strong>外部样式表</strong>可以极大提高工作效率</li>
+<li>外部样式表通常存储在 <strong>CSS 文件</strong>中</li>
+<li>多个样式定义可<strong>层叠</strong>为一</li>
+</ul>
+                    
+                        <a href="/2018/05/26/CSS层叠样式表知识汇总/" class="postShorten-excerpt_link link">
+                            بیشتر بخوانید
+                        </a>
+                        
+                    
+                </div>
+            
         </div>
-        <div class="cube-right">
+        
+            <a href="/2018/05/26/CSS层叠样式表知识汇总/">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" src=""/>
+                </div>
+            </a>
             
-
-<div class="cube-search cube-sidebar" id="cube-search">
-    <div class="search-container">
-        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
-        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
-    </div>
-    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
-</div>
-<script>
-    (function (window) {
-        'use strict';
-        window.searchModule = {}
-        window.searchModule.JSONUrl = '/content.json'
-        window.searchModule.rootUrl = '/'
-    })(window)
-</script>
-<div class="cube-search-form">
-    <div class="cube-search-control">
-        <input type="text" placeholder="搜索" class="search-input">
-        <a class="close-button">
-            <i class="cube-icon cube-close" aria-hidden="true"></i>
-        </a>
-    </div>
-    <div class="cube-search-result"></div>
-</div>
-
-
-<div class="cube-author cube-sidebar" id="cube-author">
+        
+    </article>
     
-    
-    <span>Simon</span>
-    
-    
-    <a title="愿尝尽世间苦，看遍人百态">愿尝尽世间苦，看遍人百态</a>
-    
-    <div class="count">
-        <a class="count articles"><span>8</span>文章</a>
-        <a class="count tags"><span>7</span>标签</a>
-        <a class="count categories"><span>5</span>分类</a>
-    </div>
-</div>
-
-
-
-<div class="cube-music cube-sidebar" id="cube-music">
-    <div class="cube-player aplayer" id="cube-player"></div>
-</div>
-<script>
-    (function (window) {
-        window.musicModule = {}
-        window.musicModule.musicConfig = '{"narrow":false,"autoplay":true,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
-        window.musicModule.lrcConfig = {
-            open: '开启歌词',
-            close: '关闭歌词'
-        }
-    })(window)
-</script>
-
-
-
-<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
-    <div class="title">
-        <a>近期文章</a>
-    </div>
-    <ul class="list">
+    <div class="pagination-bar">
+    <ul class="pagination">
         
         
-        <li>
-            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
-            
-            <div class="normal">
-                <p class="index first">
-                    <span>1</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/JavaScript基础/" title="JavaScript基础">JavaScript基础</a>
-                </p>
-            </div>
-            
-        </li>
-        
-        
-        
-        <li>
-            <div class="normal">
-                <p class="index">
-                    <span>2</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/CSS层叠样式表知识汇总/" title="CSS层叠样式表知识汇总">CSS层叠样式表知识汇总</a>
-                </p>
-            </div>
-        </li>
-        
-        
-        
-        <li>
-            <div class="normal">
-                <p class="index">
-                    <span>3</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/Html知识汇总/" title="Html知识汇总">Html知识汇总</a>
-                </p>
-            </div>
-        </li>
-        
-        
-        
-        <li>
-            <div class="normal">
-                <p class="index">
-                    <span>4</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/CentOS7-2下安装MySQL5-7/" title="CentOS7.2下安装MySQL5.7">CentOS7.2下安装MySQL5.7</a>
-                </p>
-            </div>
-        </li>
-        
-        
-        
-        <li>
-            <div class="normal">
-                <p class="index">
-                    <span>5</span>
-                </p>
-                <p class="title">
-                    <a href="/2018/05/26/git版本控制软件的操作/" title="Git版本控制软件的操作">Git版本控制软件的操作</a>
-                </p>
-            </div>
-        </li>
-        
-        
+        <li class="pagination-number">صفحه 1 از 1</li>
     </ul>
 </div>
 
+</section>
 
 
-<div class="cube-categories cube-sidebar" id="cube-categories">
-    <div class="title">
-        <a href="/categories">分类</a>
-    </div>
-    <div class="cube-boxs">
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/categories/CSS样式表/">#CSS样式表</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/categories/Linux/">#Linux</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/categories/HTML/">#HTML</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/categories/JavaScript/">#JavaScript</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/categories/Python/">#Python</a>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
-    <div class="title">
-        <a href="/tags">标签云</a>
-    </div>
-    <div class="cube-boxs">
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/CSS/">#CSS</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/Linux/">#Linux</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/前端html/">#前端html</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/JS/">#JS</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/Python/">#Python</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/git版本控制/">#git版本控制</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/pycharm的使用/">#pycharm的使用</a>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<div class="cube-links cube-sidebar" id="cube-links">
-    <div class="title">
-        <a>个人链接</a>
-    </div>
-    <ul class="list">
-        
-        <li>
-            
-            
-            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
-            
-            <a href="https://github.com/simonzhao88" target="_blank">GitHub</a>
-        </li>
-        
-        <li>
-            
-            
-            <img src="/images/weibo.jpg">
-            
-            <a href="https://weibo.com/u/2916037995" target="_blank">Weibo</a>
-        </li>
-        
-        <li>
-            
-            
-            <img src="/images/zhihu.png">
-            
-            <a href="https://www.zhihu.com/people/ben-dan-zhang-yu-68/activities" target="_blank">知乎</a>
-        </li>
-        
-    </ul>
-</div>
-
-
-
-<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
-    <div class="title">
-        <a>友情链接</a>
-    </div>
-    <ul class="list">
-        
-        <li>
-            <!-- TODO change avatar.png to friend.png-->
-            <img src="/images/friends_links.jpg ">
-            <a href="https://alexyanglong.github.io" target="_blank">Alexyang</a>
-        </li>
-        
-        <li>
-            <!-- TODO change avatar.png to friend.png-->
-            <img src="https://shuaixiaohao.github.io/images/fenghao.png">
-            <a href="https://shuaixiaohao.github.io/" target="_blank">帅小昊</a>
-        </li>
-        
-        <li>
-            <!-- TODO change avatar.png to friend.png-->
-            <img src="http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg">
-            <a href="https://threereyed.github.io/" target="_blank">强</a>
-        </li>
-        
-        <li>
-            <!-- TODO change avatar.png to friend.png-->
-            <img src="https://gavinliu4011.github.io/img/avatar.jpg">
-            <a href="https://gavinliu4011.github.io/" target="_blank">gavinliu</a>
-        </li>
-        
-    </ul>
-</div>
-
-
-        </div>
-    </div>
-</div>
-<footer class="cube-footer">
-    
-© 2017 Simon
-
-<br>
-Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">simon</a>
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 Simon. All Rights Reserved.
+    </span>
 </footer>
-<!-- inject:script -->
-<script src="/js/script.js"></script>
-<!-- endinject -->
-<div class="cube-loading out"></div>
-</body>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">Simon</h4>
+        
+            <div id="about-card-bio"><p>یادداشت‌های یه المپیاد کامپیوتری در حال یادگیری لینوکس!</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>المپیادی، برنامه نویس!</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
+<!--SCRIPTS END-->
+
+
+
+    </body>
 </html>
